@@ -1,9 +1,23 @@
 #img-bg{
-    background-image: url('https://i.imgur.com/d5bMdDJ.jpg');
+    background-image: url('https://media.discordapp.net/attachments/890758555806859317/892485530447646750/Design_sem_nome_12.png?');
+    
     min-height: 695px;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+div.color h1{
 
+color:  #2d2da8;
+}
+
+.btn{
+
+color: #2d2da8;
+
+}
+
+a{
+    color: #2d2da8;
 }
