@@ -30,13 +30,14 @@ export class EntrarComponent implements OnInit {
   entrar(){
     this.auth.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) =>{
       this.usuarioLogin = resp
-
+      environment.nome = this.usuarioLogin.nome
       environment.token = this.usuarioLogin.token
+      environment.foto = this.usuarioLogin.foto
       environment.email = this.usuarioLogin.email
       environment.id = this.usuarioLogin.id
 
       console.log(environment.token)
-      alert('Parabéns')
+      alert('Usuário Logado')
       this.router.navigate(['/inicio'])
     }, erro => {
       if(erro.status == 500){

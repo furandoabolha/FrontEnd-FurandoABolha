@@ -5,4 +5,5 @@ export class Tema{
     public palavraChave: string
     public descricao: string
     public postagem: Postagem[]
+    public tema: string
 }

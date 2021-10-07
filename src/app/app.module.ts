@@ -11,6 +11,8 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { TemaComponent } from './tema/tema.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     CadastrarComponent,
     EntrarComponent,
     SobreNosComponent,
+    TemaComponent,
+    InicioComponent,
 
   
   ],
