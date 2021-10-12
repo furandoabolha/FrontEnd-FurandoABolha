@@ -9,13 +9,21 @@
     <div class="row d-flex justify-content-center">
       <div class="col-md-6">
   
+
+        <div class="form-group">
+          <label for="tema">Tema</label>
+          <input type="text" class="form-control" id="tema" [(ngModel)]='tema.tema'>
+        </div>
+  
+
         <div class="form-group">
           <label for="descricao">Descrição</label>
           <input type="text" class="form-control" id="descricao" [(ngModel)]='tema.descricao'>
         </div>
   
+
         <div class="d-flex justify-content-center">
-          <button class="btn btn-danger mr-4" routerLink='/temas' >Cancelar</button>
+          <button class="btn btn-danger mr-4" routerLink='/tema' >Cancelar</button>
           <button class="btn btn-success" (click)='atualizar()'>Atualizar</button>
         </div>
   

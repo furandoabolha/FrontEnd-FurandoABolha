@@ -13,6 +13,8 @@ export class MenuComponent implements OnInit {
 
   nome: string = environment.nome;
   foto = environment.foto;
+  token = environment.token
+  tei: string = "<----"
 
   constructor(private router: Router) { }
 
@@ -26,6 +28,7 @@ export class MenuComponent implements OnInit {
     environment.foto = ''
     environment.tipo = ''
     environment.nome = ''
+    console.log(this.tei)
 
   }
 

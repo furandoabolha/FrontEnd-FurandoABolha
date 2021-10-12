@@ -86,16 +86,15 @@
         aria-labelledby="nav-todasPostagens-tab"
       >
         <!-- ! inicio dos cards de Todas Postagens -->
-        <div class="card-columns">
+        <div class="card-columns"  >
           <div class="card text-center" *ngFor="let item of listaPostagens">
             <div class="card-body">
               <h5 class="card-title m-0">{{ item.titulo }}</h5>
-              <small class="text-muted"> Tema: {{ item.tema.descricao }}</small>
+              <!--<small class="text-muted"> Tema: {{ tema.descricao }}</small> --> 
               <p class="card-text mt-3">{{ item.texto }}</p>
               <p class="card-text">
                 <small class="text-muted">
-                  {{ item.data | date: "dd/MM/yyyy" }} às
-                  {{ item.data | date: "HH:mm" }}
+                  {{ item.data }}
                 </small>
               </p>
   
@@ -115,26 +114,25 @@
         aria-labelledby="nav-minhasPostagens-tab"
       >
         <!-- ? Inicio dos cards de Minhas Postagens -->
-        <div class="card-columns">
-          <div class="card text-center" *ngFor="let item of usuario.postagem">
+        <div class="card-columns" >
+          <div class="card text-center" *ngFor="let userPost of usuario.postagem">
             <div class="card-body">
-              <h5 class="card-title m-0">{{ item.titulo }}</h5>
-              <small class="text-muted"> Tema: {{ item.tema.descricao }}</small>
-              <p class="card-text mt-3">{{ item.texto }}</p>
+              <h5 class="card-title m-0">{{ userPost.titulo }}</h5>
+              <small class="text-muted"> Tema: {{ userPost.tema.tema }}</small>
+              <p class="card-text mt-3">{{ userPost.texto }}</p>
               <p class="card-text">
                 <small class="text-muted">
-                  {{ item.data | date: "dd/MM/yyyy" }} às
-                  {{ item.data | date: "HH:mm" }}
+                  {{ userPost.data }}
                 </small>
               </p>
   
               <a
-                [routerLink]="['/postagem-edit', item.id]"
+                [routerLink]="['/postagem-edit', userPost.id]"
                 class="btn btn-outline-dark mr-3"
                 >Editar</a
               >
               <a
-                [routerLink]="['/postagem-delete', item.id]"
+                [routerLink]="['/postagem-delete', userPost.id]"
                 class="btn btn-outline-danger"
                 >Apagar</a
               >
@@ -154,6 +152,7 @@
         <div class="card-columns" *ngFor="let tema of listaTemas">
           <div class="card text-center" *ngFor="let item of tema.postagem">
             <div class="card-body">
+              <small class="text-muted"> Tema: {{ tema.descricao }}</small>
               <h5 class="card-title m-0">{{ item.titulo }}</h5>
               <p class="card-text mt-3">{{ item.texto }}</p>
               <p class="card-text">

@@ -20,12 +20,13 @@
         </div>
   
         <div class="form-group">
-          <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
+          <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
           <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
-            <option *ngFor='let item of listaTemas' value="{{item.id}}">
-              {{item.descricao}}
+            <option  *ngFor='let item of listaTemas' value="{{item.id}}">
+              {{item.tema}}
             </option>
           </select>
+          <p>Tema Atual: {{postagem.tema.tema}}</p>
         </div>
   
         <div class="d-flex justify-content-center">
