@@ -20,6 +20,9 @@ export class InicioComponent implements OnInit {
   idTema: number;
   tema: Tema = new Tema();
 
+  foto = environment.foto;
+  nome = environment.nome;
+
   //!variaveis para o usuário
   idUser = environment.id;
   usuario: Usuario = new Usuario();

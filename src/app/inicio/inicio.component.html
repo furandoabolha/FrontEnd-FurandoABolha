@@ -85,12 +85,50 @@
         role="tabpanel"
         aria-labelledby="nav-todasPostagens-tab"
       >
+      
+      <div class="card-rows"  >
+        <div class="card" *ngFor="let item of listaPostagens">
+          
+          <div class="card-body">
+            
+            <section class="testimonials">
+              <div class="row">
+                <div class="testimonials-col">
+                <img src="{{item.usuario.foto}}">
+                <div class="nomefeed mt-4">
+                    <h3>{{item.usuario.nome}}</h3>
+                   
+                    
+                </div>
+            </div>
+            </div>
+            <div class="card-title text-left"><h3>{{ item.titulo }}</h3></div>
+            <div class="col-12 m-12 text-left">{{ item.texto }}</div>
+            <div><img src="assets/img/peixes.png">  </div>
+
+            </section>
+          </div>
+        </div>
+      </div>
+      
+
+      </div>
+
+
+
+
+
+
         <!-- ! inicio dos cards de Todas Postagens -->
+
+
+
+        <!--
         <div class="card-columns"  >
           <div class="card text-center" *ngFor="let item of listaPostagens">
             <div class="card-body">
               <h5 class="card-title m-0">{{ item.titulo }}</h5>
-              <!--<small class="text-muted"> Tema: {{ tema.descricao }}</small> --> 
+              //<small class="text-muted"> Tema: {{ tema.descricao }}</small> 
               <p class="card-text mt-3">{{ item.texto }}</p>
               <p class="card-text">
                 <small class="text-muted">
@@ -104,8 +142,8 @@
             </div>
           </div>
         </div>
-        <!-- ! Fim dos cards de Todas Postagens -->
-      </div>
+        //! Fim dos cards de Todas Postagens 
+      </div> -->
   
       <div
         class="tab-pane fade"

@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+
+
+.nav-tabs{
+	width: 30%;
+}
+
+#div1{
+    background-color: rgb(9,18,58);
+    width: 33.3%;
+    float: right;
+    overflow-y:scroll;
+    height: 100vh;
+     
+}
+
+.tama{
+    margin: 0 auto;
+}
+
+#div2{
+    width: 33.3%;
+    background-color: rgb(9,18,58);
+}
+
+#div3{
+    background-color: rgb(9,18,58);
+    width: 23.3%;
+    float: left;
+    height: 100vh;
+}
+
+.font-20{
+    font-size: 20pt;
+}
+
+.margintopimg{
+    margin-top: 200px;
+}
+
+.margintoptitulo{
+    margin-top: 100px;
+}
+.marginsub70{
+    margin-top: 40px;
+}
+
+.ml-{
+    margin-left: -4%;
+}
+
+.main{
+    width: 100%;
+  }
+  
+  .sub-main{
+    width: 100%;
+    margin:22px;
+    float: left;
+  }
+
+  .button-one, .button-two, .button-three{
+    text-align: center;
+    cursor: pointer;
+    font-size:24px;
+    margin: 0 0 0 100px;
+  }
+  
