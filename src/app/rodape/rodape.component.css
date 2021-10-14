@@ -1,3 +1,13 @@
+@import url('http://fonts.cdnfonts.com/css/bubbleboddy-neue-trial');
+
+span{
+  font-size: 21px;
+  font-family: 'Bubbleboddy Neue Trial', sans-serif;
+  font-weight: 200;
+}
+
+
+
 ul.social-network{
     list-style: none;
     display: inline;
@@ -9,23 +19,35 @@ ul.social-network li{
     padding: 3px;
 }
 
+
+
+
 .fa{
-    font-size: 35pt;
+    font-size: 25pt;
     color: white;
     padding: 10px;
   }
-
-
 
 .fa-linkedin-square:hover{
     color:#0072b1;
 }
 
-.fa-github-alt:hover{
-    color:#ff8623;
+
+.fa-instagram:hover{
+    background: linear-gradient(180deg, rgba(251,255,0,1) 0%,  rgba(255,0,221,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+.fa-envelope-o:hover{
+    background: linear-gradient(180deg, rgb(255, 0, 0) 0%,  rgb(229, 255, 0) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-
-.fa-envelope:hover{
-    color:#ff4e4e;
+footer{
+    background-color: #250466;
 }

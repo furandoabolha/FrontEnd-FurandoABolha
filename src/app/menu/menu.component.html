@@ -1,28 +1,87 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-0  mb-0 sticky-top ">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#conteudoNavbarSuportado"
+    aria-controls="conteudoNavbarSuportado"
+    aria-expanded="false"
+    aria-label="Alterna navegação"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto d-flex align-items-center">
+  <div
+    class="collapse navbar-collapse margintananan"
+    id="conteudoNavbarSuportado"
+  >
+    <ul class="navbar-nav mr-auto d-flex align-items-center mt-3">
       <li class="nav-item active">
-        <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
-      </li>
-      <li class="nav-item pl-3">
-        <p class="m-0 font-weight-bold text-white fs-16">{{nome}}</p>
+        <img
+          src="https://i.imgur.com/Te8111D.png"
+          alt="Furando a bolha"
+          width="82px"
+          height="38px"
+        />
       </li>
 
-      <li class="nav-item pl-3">
-        <a href="">
-          <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o " aria-hidden="true"></i></p>
+      <li class="nav-item active text-center">
+        <form class="form-inline ml-5">
+          <input
+            class="linha pesquisa"
+            type="search"
+            placeholder="Postagem por tema"
+            aria-label="Pesquisar"
+          />
+          <a href="" class="fontBlue">
+            <img
+              src="https://media.discordapp.net/attachments/890758555806859317/898188982297452594/Design_sem_nome_20.png?width=390&height=390
+            "
+              alt="lupa"
+              width="40px"
+              height="40px"
+              id="imgLupa"
+            />
+          </a>
+        </form>
+      </li>
+      
+
+      <!--LI DOS ICONES DE POSTAGEM E TEMA-->
+      <li class="form-inline margintananan text-muted">
+        <div>
+          <a href="" class="text-muted">
+            <i class="fa fa-home fa-lg" aria-hidden="true">
+              <p class=" m-0">Inicio</p>
+            </i>
+          </a>
+        </div>
+      </li>
+
+      <li class="form-inline ml-5 text-center">
+        <a href="" class="text-muted">
+          <i class="fa fa-newspaper-o fa-lg" aria-hidden="true">
+            <p class="m-0">Postagem por Tema</p>
+          </i>
+        </a>
+      </li>
+
+      <li class="form-inline ml-5 text-muted text-center">
+        <a href="" class="text-muted">
+          <i class="fa fa-list-alt fa-lg" aria-hidden="true">
+            <p class="m-0">Minhas Postagens</p>
+          </i>
         </a>
       </li>
     </ul>
 
-    <ul class="navbar-nav ml-auto d-flex align-items-center">
+    
+
+    <ul class="navbar-nav ml-auto d-flex align-items-center mt-3">
       <li class="nav-item pl-3">
         <a (click)= "sair()" class="m-0 font-weight-bold text-white fs-16" >Sair <i class="fa fa-sign-out" aria-hidden="true" ></i></a>
       </li>
     </ul>
+    <!--LI DOS ICONES DE POSTAGEM E TEMA  E SAIR -->
   </div>
 </nav>
