@@ -10,15 +10,16 @@ import { InicioComponent } from './inicio/inicio.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
 
+
 const routes: Routes = [
   {path:'', redirectTo: 'entrar', pathMatch: 'full'},
-  
   {path:'cadastrar', component:CadastrarComponent},
   {path: 'entrar', component:EntrarComponent},
   {path:'sobre-nos', component:SobreNosComponent},
   {path: 'inicio', component:InicioComponent},
   {path: 'tema', component:TemaComponent},
   
+
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'tema-delete/:id', component: TemaDeleteComponent},
   {path: 'postagem-edit/:id', component: PostagemEditComponent},

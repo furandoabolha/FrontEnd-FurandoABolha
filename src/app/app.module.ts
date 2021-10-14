@@ -19,6 +19,7 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
     PostagemDeleteComponent,
     TemaEditComponent,
     PostagemEditComponent,
+
 
   
   ],

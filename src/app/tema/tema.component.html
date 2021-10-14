@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
 
     <div class="row bg-secondary">
@@ -54,6 +55,7 @@
             </tr>
           </thead>
           <tbody>
+            
             <tr *ngFor='let tema of listaTemas'>
             <th>{{tema.id}}</th>
             <td>{{tema.tema}}</td>
@@ -62,7 +64,7 @@
                 <button class="btn btn-dark mr-4" [routerLink]="['/tema-edit', tema.id]">Editar</button>
                 <button class="btn btn-danger" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
               </td>
-            </tr>
+            </tr> 
           </tbody>
         </table>
   
@@ -70,3 +72,4 @@
     </div>
   
   </div>
+
