@@ -1,23 +1,67 @@
-#img-bg{
-    background-image: url('https://media.discordapp.net/attachments/890758555806859317/892485530447646750/Design_sem_nome_12.png?');
-    
-    min-height: 695px;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
 
+#img-bg{
+
+   
+        background-image: url('https://media.discordapp.net/attachments/890758555806859317/897994805404114994/Design_sem_nome_18.png?width=390&height=390');
+        
+        min-height: 695px;
+    
+        
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: unset;
+        background-position-x: left;
+       
+}
+h1{
+    font-family: 'Josefin Sans', sans-serif;
+    color: black;
+    
+}
+body{
+    background-image: url('/assets/Design\ sem\ nome.gif');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-}
-div.color h1{
 
-color:  #2d2da8;
+   
 }
 
-.btn{
+#border{
 
-color: #2d2da8;
+  
+    width: 100%;
+    min-height: 50vh;
+    border-radius: 30px;
+    display:list-item;
+    align-items:unset;
+    padding: 15px;
+    
+}
+
+.form-control{
+
+    font-family: 'Josefin Sans', sans-serif;
+    border: px solid;
+
+
+}
+   
+    
+label{
+
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+p{
+
+    font-family: 'Josefin Sans', sans-serif;
 
 }
 
 a{
-    color: #2d2da8;
+
+    font-family: 'Josefin Sans', sans-serif;
+
 }
