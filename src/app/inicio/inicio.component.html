@@ -1,22 +1,28 @@
-
 <!-- Começo do canto esquerdo do feed -->
-<div id="div1" class="col-md-3  col-sm-12 respon-1 sticky-top ftcolor">
-
-  <div class="margintoptitulo">
-    <div class="justify-content-center text-center">
+<div class="container-fluid bgBlue">
+  <div id="div1" class="col-md-3 col-sm-12 respon-1 sticky-top text-white">
+    <div class="margintoptitulo">
+      <div class="justify-content-center text-center">
         <div><h3>O MAIS FURADOS</h3></div>
-          <div class="marginsub70"><h5> Trummer </h5> </div>
-              <div class="marginsub70 text-left" ><p>Os peixes são animais vertebrados, 
-            aquáticos, tipicamente ectotérmicos, que possuem o corpo fusiforme,
-             os membros transformados em barbatanas ou nadadeiras ...</p>
-              </div>
-          </div>
+        <div class="marginsub70"><h5>Trummer</h5></div>
+        <div class="marginsub70 text-left">
+          <p>
+            Os peixes são animais vertebrados, aquáticos, tipicamente
+            ectotérmicos, que possuem o corpo fusiforme, os membros
+            transformados em barbatanas ou nadadeiras ...
+          </p>
+        </div>
+      </div>
 
       <div class="justify-content-center text-center">
-          <div class="marginsub70"><h5> Modesto </h5> </div>
-               <div class="marginsub70 text-left" ><p>Os peixes são animais vertebrados, 
-          aquáticos, tipicamente ectotérmicos, que possuem o corpo fusiforme,
-           os membros transformados em barbatanas ou nadadeiras ...</p></div>
+        <div class="marginsub70"><h5>Modesto</h5></div>
+        <div class="marginsub70 text-left">
+          <p>
+            Os peixes são animais vertebrados, aquáticos, tipicamente
+            ectotérmicos, que possuem o corpo fusiforme, os membros
+            transformados em barbatanas ou nadadeiras ...
+          </p>
+        </div>
       </div>
 
       <div>
@@ -58,161 +64,147 @@
             <span class="text-light">furando a bolha ©</span>
           </div>
         </div>
-
       </div>
-
+    </div>
   </div>
+  <!-- Final do canto esquerdo do feed -->
 
- 
-</div>
- <!-- Final do canto esquerdo do feed -->
-
-
- <!-- Começo do canto direito do feed-->
-  <div id="div3"  class="col-md-3 col-sm-12  sticky-top ftcolor">
-      <section class="testimonials ml-">
-          <div class="row">
-              
+  <!-- Começo do canto direito do feed-->
+  <div id="div3" class="col-md-3 col-sm-12 fixed-top text-white">
+    <section class="testimonials ml-">
+      <div class="row"></div>
+      <div class="row margintopimg justify-content-center">
+        <div class="testimonials-col">
+          <img class="imgsub" src="assets/img/gato1.png" />
+          <div class="font-20 nomefeed mt-4">
+            <h3>Christine Berley</h3>
           </div>
-              <div class="row margintopimg justify-content-center">
-                  <div class="testimonials-col">
-                      <img class="imgsub" src="assets/img/gato1.png">
-                      <div class=" font-20 nomefeed mt-4">
-                          <h3>Christine Berley</h3>
-                 
-                  
-                      </div>
-          
-                  </div>
-              </div>
-      <div>
-          <div class="main">
-              <div class="sub-main">
-                  <div class="row justify-content-center">
-                  <button type="button" class="btn btn-outline-light">POST</button>
-                  </div>
-              </div>
-          </div>
+        </div>
       </div>
-      </section>
-      
+      <div>
+        <div class="main">
+          <div class="sub-main">
+            <div class="row justify-content-center">
+              <button type="button" class="btn btn-outline-light">POST</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
   <!-- Fim do canto direito do feed-->
 
   <!--Inicio do Feed-->
 
-<div id="div2" class="col-md-6 col-sm-12 container mb-5 mt-5" id="postagens">
-  <nav>
-    <div
-      class="nav  tama d-flex justify-content-center"
-      id="nav-tab"
-      role="tablist"
-    >
-
-
-     
-    </div>
-  </nav> 
-  <div class="card-rows justify-content-center"  >
-      <div  *ngFor="let item of listaPostagens">
-        
-        <div class="card-body">
-          
+  <div id="div2" class="col-md-6 col-sm-12 container mb-5 mt-5" id="postagens">
+    <nav>
+      <div
+        class="nav tama d-flex justify-content-center"
+        id="nav-tab"
+        role="tablist"
+      ></div>
+    </nav>
+    <div class="card-rows justify-content-center">
+      <div *ngFor="let item of listaPostagens">
+        <div class="card-body bgBlue text-white">
           <section class="testimonials">
             <div class="row">
               <div class="testimonials-col">
-              <img src="{{item.usuario.foto}}">
-              <div class=" font-20 nomefeed mt-4">
-                  <h3>{{item.usuario.nome}}</h3>
-                 
-                  
+                <img src="{{ item.usuario.foto }}" />
+                <div class="font-20 nomefeed mt-4">
+                  <h3>{{ item.usuario.nome }}</h3>
+                </div>
               </div>
-          </div>
-          </div>
-          <div class="font-20 text-left">{{ item.titulo }}</div>
-          <div class=" m-12 text-left">{{ item.texto }}</div>
-          <div><img src="assets/img/peixes.png">  </div>
-
+            </div>
+            <div class="font-20 text-left">{{ item.titulo }}</div>
+            <div class="m-12 text-left">{{ item.texto }}</div>
+            <div><img src="assets/img/peixes.png" /></div>
           </section>
         </div>
       </div>
       <!-- ! Fim dos cards de Postagem por Tema -->
     </div>
- <!--Fim do Feed-->
+    <!--Fim do Feed-->
 
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="novaPostagem"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="TituloModalCentralizado"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="TituloModalCentralizado">
+              Nova Postagem
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body bgBlue">
+            <div class="form-group">
+              <label for="titulo">Título</label>
+              <input
+                type="text"
+                class="form-control"
+                id="titulo"
+                placeholder="Digite o título"
+                [(ngModel)]="postagem.titulo"
+              />
+            </div>
 
+            <div class="form-group">
+              <label for="texto">Texto</label>
+              <textarea
+                class="form-control"
+                name="texto"
+                id="texto"
+                rows="3"
+                [(ngModel)]="postagem.texto"
+              ></textarea>
+            </div>
 
-
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="novaPostagem"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="TituloModalCentralizado"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Fechar"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="titulo">Título</label>
-          <input
-            type="text"
-            class="form-control"
-            id="titulo"
-            placeholder="Digite o título"
-            [(ngModel)]="postagem.titulo"
-          />
+            <div class="form-group">
+              <label for="texto"
+                >Escolha um tema ou
+                <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>:
+              </label>
+              <select
+                name="tema"
+                id="tema"
+                class="form-control"
+                (change)="findByIdTema()"
+                [(ngModel)]="idTema"
+              >
+                <option *ngFor="let tema of listaTemas" value="{{ tema.id }}">
+                  {{ tema.descricao }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="postar()"
+              data-dismiss="modal"
+            >
+              Publicar
+            </button>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="texto">Texto</label>
-          <textarea
-            class="form-control"
-            name="texto"
-            id="texto"
-            rows="3"
-            [(ngModel)]="postagem.texto"
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="texto"
-            >Escolha um tema ou
-            <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>:
-          </label>
-          <select
-            name="tema"
-            id="tema"
-            class="form-control"
-            (change)="findByIdTema()"
-            [(ngModel)]="idTema"
-          >
-            <option *ngFor="let tema of listaTemas" value="{{ tema.id }}">
-              {{ tema.descricao }}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">
-          Cancelar
-        </button>
-        <button type="button" class="btn btn-success" (click)="postar()" data-dismiss="modal">
-          Publicar
-        </button>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@
 
 
 
+
 .nav-tabs{
 	width: 30%;
 }
@@ -14,8 +15,10 @@
     height: 100vh;
      
 }
-.imgsub{
 
+
+.bgBlue{
+    background-color: rgb(9,18,58);
 }
 
 .tama{
@@ -33,11 +36,6 @@
     width: 33%;
     float: left;
     height: 100vh;
-  
-}
-
-.respon-1{
-
 }
 
 .font-20{
@@ -84,6 +82,7 @@
   #div3{
     position: static;
     width: 100%;
+
   }
 
 
