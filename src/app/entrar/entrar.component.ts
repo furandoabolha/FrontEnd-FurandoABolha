@@ -37,7 +37,7 @@ export class EntrarComponent implements OnInit {
       environment.id = this.usuarioLogin.id
 
       console.log(environment.token)
-      alert('Usuário Logado')
+      //alert('Usuário Logado')
       this.router.navigate(['/inicio'])
     }, erro => {
       if(erro.status == 500){

@@ -23,7 +23,10 @@ export class AuthService {
       headers: new HttpHeaders().set('Authorization', environment.token),
     };
   }
-
+  
+  getByIdUser(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(`https://furandoabolha.herokuapp.com/usuarios/${id}`, this.token)
+  }
 
   entrar(userLogin: UsuarioLogin): Observable<UsuarioLogin>{
     return this.http.post<UsuarioLogin>('https://furandoabolha.herokuapp.com/usuarios/logar', userLogin)
@@ -32,12 +35,6 @@ export class AuthService {
   cadastrar(user: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('https://furandoabolha.herokuapp.com/usuarios/cadastrar', user)
   }
-
-  getByIdUser(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`http://furandoabolha.herokuapp.com/usuarios/${id}`)
-  }
-
- 
 
   logado(){
     let ok: boolean = false
