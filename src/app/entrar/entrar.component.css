@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+
+@import url("http://fonts.cdnfonts.com/css/bubbleboddy-neue-trial");
+*{
+
+    font-family: 'Bubbleboddy Neue Trial';
+}
 
 #img-bg{
 
@@ -15,8 +20,8 @@
        
 }
 h1{
-    font-family: 'Josefin Sans', sans-serif;
-    color: black;
+   
+    margin-top: 50px;
     
 }
 body{
@@ -48,20 +53,34 @@ body{
 
 }
    
-    
-label{
 
-    font-family: 'Josefin Sans', sans-serif;
-}
 
-p{
+.linha{
 
-    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-bottom: 30px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #160150; 
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: rgb(83, 80, 80);
+  width: 250px;
+  
+  }
 
+  textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+   border-bottom: 1px solid #160150;
+    outline: 0;
 }
 
 a{
 
-    font-family: 'Josefin Sans', sans-serif;
-
+    color:#160150;
 }
