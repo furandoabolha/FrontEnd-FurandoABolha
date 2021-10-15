@@ -1,8 +1,9 @@
-<!-- Começo do canto esquerdo do feed -->
+<!-- Começo do canto direito do feed -->
 <div class="container-fluid bgBlue">
   <div
     id="div1"
-    class="col-md-3 col-sm-12 sticky-top text-white margintoptitulo">
+    class="col-md-3 col-sm-12 sticky-top text-white margintoptitulo"
+  >
     <div class="justify-content-center text-center">
       <div><h3>O MAIS FURADOS</h3></div>
       <div class="marginsub70"><h5>Trummer</h5></div>
@@ -67,17 +68,17 @@
       </div>
     </div>
   </div>
-  <!-- Final do canto esquerdo do feed -->
+  <!-- Final do canto direito do feed -->
 
-  <!-- Começo do canto direito do feed-->
-  <div id="div3" class="col-md-3 col-sm-12 fixed-top text-white">
+  <!-- Começo do canto esquerdo do feed-->
+  <div id="div3" class="col-md-3 col-sm-12 sticky-top text-white">
     <section class="testimonials ml-">
       <div class="row"></div>
       <div class="row margintopimg justify-content-center">
         <div class="testimonials-col">
-          <img class="imgsub" src="assets/img/gato1.png" />
+          <img class="imgsub" src="{{ foto }}" />
           <div class="font-20 nomefeed mt-4">
-            <h3>Christine Berley</h3>
+            <h3>{{ nome }}</h3>
           </div>
         </div>
       </div>
@@ -85,14 +86,20 @@
         <div class="main">
           <div class="sub-main">
             <div class="row justify-content-center">
-              <button type="button" class="btn btn-outline-light">POST</button>
+              <button
+                class="btn btn-outline-light"
+                data-toggle="modal"
+                data-target="#novaPostagem"
+              >
+                Post
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
   </div>
-  <!-- Fim do canto direito do feed-->
+  <!-- Fim do canto esquerdo do feed-->
 
   <!--Inicio do Feed-->
 
@@ -118,7 +125,8 @@
             </div>
             <div class="font-20 text-left">{{ item.titulo }}</div>
             <div class="m-12 text-left">{{ item.texto }}</div>
-            <div><img src="assets/img/peixes.png" /></div>
+            <!--LEMBRAR DE APAGAR OS PEIXES E GATOS DO ASSETS DE ARTUR-->
+            <div><img src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png" width="100px" height="50px" /></div>
           </section>
         </div>
       </div>
@@ -126,6 +134,18 @@
     </div>
     <!--Fim do Feed-->
 
+
+
+
+
+
+
+
+
+
+
+
+    
     <!-- Modal -->
     <div
       class="modal fade"
@@ -135,7 +155,7 @@
       aria-labelledby="TituloModalCentralizado"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="TituloModalCentralizado">
@@ -150,12 +170,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body bgBlue">
+          <div class="modal-body">
             <div class="form-group">
               <label for="titulo">Título</label>
               <input
                 type="text"
-                class="form-control"
+                class="linha"
                 id="titulo"
                 placeholder="Digite o título"
                 [(ngModel)]="postagem.titulo"
@@ -165,7 +185,7 @@
             <div class="form-group">
               <label for="texto">Texto</label>
               <textarea
-                class="form-control"
+                class="linha"
                 name="texto"
                 id="texto"
                 rows="3"
@@ -181,7 +201,7 @@
               <select
                 name="tema"
                 id="tema"
-                class="form-control"
+                class="linha"
                 (change)="findByIdTema()"
                 [(ngModel)]="idTema"
               >
@@ -197,7 +217,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-success"
+              class="btn btn-outline-light bgBlue text-white"
               (click)="postar()"
               data-dismiss="modal"
             >

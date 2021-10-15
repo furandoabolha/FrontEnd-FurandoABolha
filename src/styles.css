@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("http://fonts.cdnfonts.com/css/bubbleboddy-neue-trial");
 *{
-    font-family: 'Noto Sans Mono', monospace;
+    font-family:'Bubbleboddy Neue Trial';
     
 
 }
@@ -36,4 +37,5 @@
 .font-20{
     font-size: 20pt;
 }
+
 

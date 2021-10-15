@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white p-0  mb-0 sticky-top ">
+<nav class="navbar navbar-expand-lg navbar-light bg-white p-0  mb-0 fixed-top ">
   <button
     class="navbar-toggler"
     type="button"
@@ -50,7 +50,7 @@
       <!--LI DOS ICONES DE POSTAGEM E TEMA-->
       <li class="form-inline margintananan text-muted">
         <div>
-          <a href="" class="text-muted">
+          <a [routerLink]="['/inicio']" class="text-muted">
             <i class="fa fa-home fa-lg" aria-hidden="true">
               <p class=" m-0">Inicio</p>
             </i>
@@ -59,7 +59,7 @@
       </li>
 
       <li class="form-inline ml-5 text-center">
-        <a href="" class="text-muted">
+        <a routerLink="/tema" class="text-muted">
           <i class="fa fa-newspaper-o fa-lg" aria-hidden="true">
             <p class="m-0">Postagem por Tema</p>
           </i>
