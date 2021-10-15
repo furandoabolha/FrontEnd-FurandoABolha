@@ -33,10 +33,10 @@ body{
   
     width: 100%;
     min-height: 50vh;
-    border-radius: 30px;
+    border-radius: 80px;
     display:list-item;
     align-items:unset;
-    padding: 15px;
+    padding: 5px;
     
     
 }
