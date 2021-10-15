@@ -10,10 +10,11 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemasComponent } from './temas/temas.component';
+
 
 const routes: Routes = [
   {path:'', redirectTo: 'entrar', pathMatch: 'full'},
-  
   {path:'cadastrar', component:CadastrarComponent},
   {path: 'entrar', component:EntrarComponent},
   {path:'sobre-nos', component:SobreNosComponent},

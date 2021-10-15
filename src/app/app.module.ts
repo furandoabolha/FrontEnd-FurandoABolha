@@ -18,6 +18,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { ContatoComponent } from './contato/contato.component';
+import { TemasComponent } from './temas/temas.component';
+
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { ContatoComponent } from './contato/contato.component';
     TemaEditComponent,
     PostagemEditComponent,
     ContatoComponent,
+    TemasComponent,
+
 
   
   ],

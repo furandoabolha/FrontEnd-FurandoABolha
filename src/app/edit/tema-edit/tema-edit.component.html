@@ -20,6 +20,16 @@
           <label for="descricao">Descrição</label>
           <input type="text" class="form-control" id="descricao" [(ngModel)]='tema.descricao'>
         </div>
+
+        <div class="form-group">
+          <input
+            [(ngModel)]="tema.palavraChave"
+            type="text"
+            class="linha"
+            id="palavraChave"
+            placeholder="Digite o link da foto"
+          />
+        </div>
   
 
         <div class="d-flex justify-content-center">

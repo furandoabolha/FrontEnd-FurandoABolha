@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light p-0  mb-0 sticky-top ">
+<nav class="navbar navbar-expand-lg navbar-light bg-white p-0 mb-0 fixed-top">
   <button
     class="navbar-toggler"
     type="button"
@@ -17,12 +17,14 @@
   >
     <ul class="navbar-nav mr-auto d-flex align-items-center mt-3">
       <li class="nav-item active">
-        <img
-          src="https://i.imgur.com/Te8111D.png"
-          alt="Furando a bolha"
-          width="82px"
-          height="38px"
-        />
+        <a [routerLink]="['/inicio']">
+          <img
+            src="https://i.imgur.com/Te8111D.png"
+            alt="Furando a bolha"
+            width="82px"
+            height="38px"
+          />
+        </a>
       </li>
 
       <li class="nav-item active text-center">
@@ -35,8 +37,7 @@
           />
           <a href="" class="fontBlue">
             <img
-              src="https://media.discordapp.net/attachments/890758555806859317/898188982297452594/Design_sem_nome_20.png?width=390&height=390
-            "
+              src="https://media.discordapp.net/attachments/890758555806859317/898188982297452594/Design_sem_nome_20.png?width=390&height=390"
               alt="lupa"
               width="40px"
               height="40px"
@@ -50,18 +51,18 @@
       <!--LI DOS ICONES DE POSTAGEM E TEMA-->
       <li class="form-inline margintananan text-muted">
         <div>
-          <a href="" class="text-muted">
+          <a [routerLink]="['/inicio']" class="text-muted">
             <i class="fa fa-home fa-lg" aria-hidden="true">
-              <p class=" m-0">Inicio</p>
+              <p class="m-0">Inicio</p>
             </i>
           </a>
         </div>
       </li>
 
       <li class="form-inline ml-5 text-center">
-        <a href="" class="text-muted">
+        <a routerLink="/temas" class="text-muted">
           <i class="fa fa-newspaper-o fa-lg" aria-hidden="true">
-            <p class="m-0">Postagem por Tema</p>
+            <p class="m-0">Temas</p>
           </i>
         </a>
       </li>
@@ -86,8 +87,9 @@
 
     <ul class="navbar-nav ml-auto d-flex align-items-center mt-3">
       <li class="nav-item pl-3">
-        <a (click)= "sair()" class="m-0 font-weight-bold fs-16 text-muted" > 
-          <i class="material-icons">exit_to_app
+        <a (click)="sair()" class="m-0 font-weight-bold fs-16 text-muted">
+          <i class="material-icons"
+            >exit_to_app
             <p>Sair</p>
           </i>
         </a>

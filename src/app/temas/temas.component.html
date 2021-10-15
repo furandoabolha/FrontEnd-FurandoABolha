@@ -1,0 +1,31 @@
+<div class="container-fluid mt-5 bgBlue">
+  <div class="row d-flex justify-content-center">
+    <h1 class="card-header text-white text-center mt-5">Temas</h1>
+  </div>
+  <div class="card-group mt-5 bgBlue">
+    <!--INICIO DO CARD COM NGFOR-->
+    <div class="card bgBlue mt-5 ml-3" *ngFor="let tema of listaTemas">
+      <img
+        class="card-img-top"
+        src="{{ tema.palavraChave }}"
+        alt="Foto do Tema"
+        width="100px"
+        height="180px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ tema.tema }}</h5>
+        <p class="card-text">{{ tema.descricao }}</p>
+        <p class="card-text">
+          <small class="text-muted">Atualizados tres minutos atrás</small>
+        </p>
+      </div>
+    </div>
+  </div>
+<!--FIM DO CARD COM NGFOR-->
+
+
+
+
+
+
+
