@@ -9,6 +9,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemasComponent } from './temas/temas.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'sobre-nos', component:SobreNosComponent},
   {path: 'inicio', component:InicioComponent},
   {path: 'tema', component:TemaComponent},
+  {path: 'temas', component:TemasComponent},
   
 
   {path: 'tema-edit/:id', component: TemaEditComponent},
