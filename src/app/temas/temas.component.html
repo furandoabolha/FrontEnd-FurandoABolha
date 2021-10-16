@@ -1,9 +1,8 @@
-<div class="container-fluid mt-5 bgBlue">
+<!--div class="container-fluid mt-5 bgBlue">
   <div class="row d-flex justify-content-center">
     <h1 class="card-header text-white text-center mt-5">Temas</h1>
   </div>
   <div class="card-group mt-5 bgBlue">
-    <!--INICIO DO CARD COM NGFOR-->
     <div class="card bgBlue mt-5 ml-3" *ngFor="let tema of listaTemas">
       <img
         class="card-img-top"
@@ -20,12 +19,103 @@
         </p>
       </div>
     </div>
+
   </div>
-<!--FIM DO CARD COM NGFOR-->
 
 
+</div-->
 
-
-
-
-
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li
+      data-target="#carouselExampleIndicators"
+      data-slide-to="0"
+      class="active"
+    ></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        class="d-block w-100"
+        src="https://marsemfim.com.br/wp-content/uploads/2019/06/faz.jpg"
+        alt="First slide"
+        width="400px"
+        height="800px"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Pesca Predatoria</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non inventore
+          iusto, eaque architecto ratione, distinctio exercitationem atque
+          dolorem, eius quas voluptatum hic alias laborum! Quam ullam explicabo
+          possimus impedit aperiam?
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        class="d-block w-100"
+        src="https://estaticos.efe.com/efecom/recursos2/imagen.aspx?lVW2oAh2vjMKa7TOD-P-2fdZE9ZfIDzYfOglQ4TncnkXVSTX-P-2bAoG0sxzXPZPAk5l-P-2fU5Uux-P-2buXnZ36NWIDfeuNwsMLA-P-3d-P-3d"
+        alt="Second slide"
+        width="400px"
+        height="800px"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Poluição do habitat marinho</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+          alias accusamus exercitationem doloremque, in error autem maxime
+          blanditiis natus consectetur at vel ea? Quod rerum quibusdam, ratione
+          ab rem cumque.
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        class="d-block w-100"
+        src="https://www.gov.br/agricultura/pt-br/assuntos/noticias/pescador-artesanal-podera-apresentar-protocolo-de-registro-para-ter-acesso-a-financiamentos/pescador-istock-648974258.jpg/@@images/0864b029-9298-465d-a3c9-f07cc0ac6622.jpeg"
+        alt="Third slide"
+        width="400px"
+        height="800px"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Pesca Artesanal e sustentabilidade</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, possimus fugit tenetur odit quaerat doloremque sit sapiente eum exercitationem, id aperiam tempore cum. Magnam officiis reprehenderit nemo quaerat in quibusdam!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        class="d-block w-100"
+        src="https://www.funverde.org.br/blog/wp-content/uploads/2018/07/A-acidificacao-dos-oceanos-e-um-desafio-para-a-ciencia-governos-e-comunidades.jpg"
+        alt="Third slide"
+        width="400px"
+        height="800px"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Acidificação dos Oceanos</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, possimus fugit tenetur odit quaerat doloremque sit sapiente eum exercitationem, id aperiam tempore cum. Magnam officiis reprehenderit nemo quaerat in quibusdam!</p>
+      </div>
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
