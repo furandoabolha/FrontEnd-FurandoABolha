@@ -30,6 +30,7 @@ export class InicioComponent implements OnInit {
   //? variaveis para a postagem
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
+  idPostagem = environment.id;
 
   constructor(
     private router: Router,
@@ -60,6 +61,13 @@ export class InicioComponent implements OnInit {
       this.tema = resp;
     });
   }
+//vamo ver se vai funfar
+  getPostagemById(){
+  //  this.postagemService.getPostagemById(id).subscribe((resp: Postagem)=>{
+  //    this.idPostagem = resp
+   /// })
+  }
+
   findByIdUser(){
     this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
       this.usuario = resp
@@ -89,5 +97,23 @@ export class InicioComponent implements OnInit {
         this.getAllPostagens();
       });
   }
+
+
+
+  //implementacao do putCurtir
+
+  curtida(id:number){
+    this.postagemService.putCurtir(id).subscribe(()=>{
+      this.getAllPostagens()
+    })
+  }
+
+  
+  descurtida(id:number){
+    this.postagemService.putDescurtir(id).subscribe(()=>{
+      this.getAllPostagens()
+    })
+  }
+
 }
 

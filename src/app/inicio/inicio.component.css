@@ -40,6 +40,10 @@ a{
     height: 100vh;
 }
 
+.mudaFonte{
+    font-family: Roboto, Arial, sans-serif;
+}
+
 .linha {
     display: flex;
     flex-direction: column;
