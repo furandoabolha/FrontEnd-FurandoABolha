@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit {
   token = environment.token
   tei: string = "<----"
 
+  tituloPost: string
   constructor(private router: Router) { }
 
   ngOnInit(){
@@ -32,6 +33,9 @@ export class MenuComponent implements OnInit {
 
   }
 
+  pesquisarProdutos(titulo: string) {
+    this.router.navigate([`https://furandoabolha.herokuapp.com/postagens/titulo/${titulo}`])
+  }
 
 }
 
