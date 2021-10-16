@@ -8,19 +8,22 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-revanche.component';
+import { SobreNosReservaComponent } from './sobre-nos-reserva/sobre-nos-reserva.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
-import { TemasComponent } from './temas/temas.component';
 
 
 const routes: Routes = [
   {path:'', redirectTo: 'entrar', pathMatch: 'full'},
   {path:'cadastrar', component:CadastrarComponent},
   {path: 'entrar', component:EntrarComponent},
-  {path:'sobre-nos', component:SobreNosComponent},
   {path: 'inicio', component:InicioComponent},
   {path: 'tema', component:TemaComponent},
   {path: 'contato', component:ContatoComponent},
+  {path:'sobre-nos', component:SobreNosComponent},
+  {path:'nos-sobre', component:SobreNosReservaComponent},
+  {path: 'a-revanche', component:SobreNosARevancheComponent},
     
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'tema-delete/:id', component: TemaDeleteComponent},

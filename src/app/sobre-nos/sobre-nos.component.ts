@@ -21,11 +21,11 @@ export class SobreNosComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    if (environment.token == '') {
-      this.router.navigate(['/entrar']);
-    }
+    // if (environment.token == '') {
+    //   this.router.navigate(['/entrar']);
+    // }
 
-    this.auth.refreshToken();
+    // this.auth.refreshToken();
     
   }
 
