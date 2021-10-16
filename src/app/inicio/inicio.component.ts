@@ -62,10 +62,10 @@ export class InicioComponent implements OnInit {
     });
   }
 //vamo ver se vai funfar
-  getPostagemById(){
-  //  this.postagemService.getPostagemById(id).subscribe((resp: Postagem)=>{
-  //    this.idPostagem = resp
-   /// })
+  getPostagemById(id: number){
+    this.postagemService.getPostagemById(id).subscribe((resp: Postagem)=>{
+      this.postagem = resp
+   })
   }
 
   findByIdUser(){

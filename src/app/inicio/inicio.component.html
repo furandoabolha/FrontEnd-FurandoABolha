@@ -131,11 +131,11 @@
             <div class="font-20 text-left">{{ item.titulo }}</div>
             <div class="m-12 text-left">{{ item.texto }}</div>
             <div class="m-12 text-left mudaFonte">
-              <button (click)="getPostagemById()" (click)='curtida(item.id)' class="mudaFonte">
+              <button (click)="getPostagemById(item.id)" (click)='curtida(item.id)' class="mudaFonte">
                 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
               </button>
               Curtidas: {{ item.curtidas }}
-              <button (click)="getPostagemById()" (click)='descurtida(item.id)' class="mudaFonte">
+              <button (click)="getPostagemById(item.id)" (click)='descurtida(item.id)' class="mudaFonte">
                 <i class="fa fa-thumbs-down" aria-hidden="true"></i>
               </button>
             </div>
