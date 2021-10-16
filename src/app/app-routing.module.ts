@@ -21,6 +21,8 @@ const routes: Routes = [
   {path: 'inicio', component:InicioComponent},
   {path: 'tema', component:TemaComponent},
   {path: 'contato', component:ContatoComponent},
+  {path: 'temas', component:TemasComponent},
+  {path: 'contato', component:ContatoComponent},
     
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'tema-delete/:id', component: TemaDeleteComponent},
