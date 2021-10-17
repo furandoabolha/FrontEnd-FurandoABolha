@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Usuario } from '../Model/Usuario';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,15 +13,35 @@ import { environment } from 'src/environments/environment.prod';
 
 export class MenuComponent implements OnInit {
 
+  idUser = environment.id;
+  usuario: Usuario = new Usuario();
+
+
   nome: string = environment.nome;
   foto = environment.foto;
   token = environment.token
-  tei: string = "<----"
+  id = environment.id
 
   tituloPost: string
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    
+    
+    ) { }
 
   ngOnInit(){
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
+    }
+
+  }
+
+    
+  findByIdUser(){
+    this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
+      this.usuario = resp
+    })
   }
 
   sair(){
@@ -29,9 +51,11 @@ export class MenuComponent implements OnInit {
     environment.foto = ''
     environment.tipo = ''
     environment.nome = ''
-    console.log(this.tei)
 
   }
+
+
+
 
   pesquisarProdutos(titulo: string) {
     this.router.navigate([`https://furandoabolha.herokuapp.com/postagens/titulo/${titulo}`])

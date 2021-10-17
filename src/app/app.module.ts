@@ -19,6 +19,7 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { ContatoComponent } from './contato/contato.component';
 import { TemasComponent } from './temas/temas.component';
+import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 
 
 
@@ -38,6 +39,7 @@ import { TemasComponent } from './temas/temas.component';
     PostagemEditComponent,
     ContatoComponent,
     TemasComponent,
+    MinhasPostagensComponent,
 
 
   

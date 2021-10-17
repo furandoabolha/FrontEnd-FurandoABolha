@@ -1,45 +1,51 @@
-import { AuthService } from './../service/auth.service';
-import { Usuario } from './../Model/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-// importações do tema
-import { TemaService } from './../service/tema.service';
-import { Tema } from '../Model/Tema';
 import { Postagem } from '../Model/Postagem';
+import { Tema } from '../Model/Tema';
+import { Usuario } from '../Model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css'],
+  selector: 'app-minhas-postagens',
+  templateUrl: './minhas-postagens.component.html',
+  styleUrls: ['./minhas-postagens.component.css']
 })
-export class InicioComponent implements OnInit {
-  //*variaveis para o tema
-  listaTemas: Tema[];
-  idTema: number;
-  tema: Tema = new Tema();
-
-  foto = environment.foto;
-  nome = environment.nome;
-
-  //!variaveis para o usuário
-  idUser = environment.id;
-  usuario: Usuario = new Usuario();
-
-  //? variaveis para a postagem
+export class MinhasPostagensComponent implements OnInit {
+  
+  
+  //variaveis de postagem
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
   idPostagem = environment.id;
 
-  constructor(
-    private router: Router,
-    private temaService: TemaService,
-    private auth: AuthService,
-    private postagemService: PostagemService
-  ) {}
 
-  ngOnInit() {
+    //!variaveis para o usuário
+    idUser = environment.id;
+    usuario: Usuario = new Usuario();
+
+
+    //variaveis para o tema
+    listaTemas: Tema[];
+    idTema: number;
+    tema: Tema = new Tema();
+  
+    foto = environment.foto;
+    nome = environment.nome;
+  
+    
+
+
+  constructor(
+    private auth: AuthService,
+    private postagemService: PostagemService,
+    private router: Router,
+    private temaService: TemaService
+  ) { }
+
+  ngOnInit(){
     window.scroll(0,0)
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
@@ -47,27 +53,15 @@ export class InicioComponent implements OnInit {
 
     this.auth.refreshToken();
     
-    this.getAllTemas();
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
+    }
+
+    this.auth.refreshToken();
+    
     this.getAllPostagens();
   }
 
-  getAllTemas() {
-    this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
-      this.listaTemas = resp;
-    });
-  }
-
-  findByIdTema() {
-    this.temaService.getTemaById(this.idTema).subscribe((resp: Tema) => {
-      this.tema = resp;
-    });
-  }
-//vamo ver se vai funfar
-  getPostagemById(id: number){
-    this.postagemService.getPostagemById(id).subscribe((resp: Postagem)=>{
-      this.postagem = resp
-   })
-  }
 
   findByIdUser(){
     this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
@@ -75,12 +69,19 @@ export class InicioComponent implements OnInit {
     })
   }
 
-
+  
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp;
     });
   }
+
+  getPostagemById(id: number){
+    this.postagemService.getPostagemById(id).subscribe((resp: Postagem)=>{
+      this.postagem = resp
+   })
+  }
+  
 
   postar() {
     this.tema.id = this.idTema;
@@ -100,8 +101,17 @@ export class InicioComponent implements OnInit {
   }
 
 
+  getAllTemas() {
+    this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp;
+    });
+  }
 
-  //implementacao do putCurtir
+  findByIdTema() {
+    this.temaService.getTemaById(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp;
+    });
+  }
 
   curtida(id:number){
     this.postagemService.putCurtir(id).subscribe(()=>{
@@ -116,5 +126,9 @@ export class InicioComponent implements OnInit {
     })
   }
 
-}
 
+
+  
+
+
+}
