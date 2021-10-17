@@ -63,7 +63,7 @@ select:focus {
 }
 
 a {
-  color: #160150;
+  color: rgb(9,18,58);
 }
 
 h1 {
@@ -72,7 +72,7 @@ h1 {
   margin: 0 auto;
   margin-top: 30px;
   width: 500px;
-  color: #160150;
+  color: rgb(9,18,58);
   text-align: center;
   font-family: "Bubbleboddy Neue Trial";
 }
@@ -105,18 +105,18 @@ a {
   box-sizing: border-box;
 }
 textarea {
-  height: 100px;
+  height: 50px;
   resize: none;
   overflow: auto;
 }
 input[type="submit"],
 a {
   background-color: whitesmoke;
-  color: #160150;
+  color: rgb(9,18,58);
   height: 50px;
   cursor: pointer;
   margin-top: 30px;
-  font-size: 1.29em;
+  font-size: 1em;
   font-family: "Bubbleboddy Neue Trial";
   -webkit-transition: background-color 0.5s;
   -moz-transition: background-color 0.5s;
@@ -127,8 +127,8 @@ input[type="submit"]:hover {
   background-color: #e58f0e;
 }
 label {
-  font-size: 1.5em;
-  margin-top: 20px;
+  font-size: 1.25em;
+  margin-top: 10px;
   padding-left: 20px;
 }
 .formgroup,

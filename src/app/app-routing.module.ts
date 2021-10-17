@@ -9,9 +9,9 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-revanche.component';
 
-import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
 import { TemasComponent } from './temas/temas.component';

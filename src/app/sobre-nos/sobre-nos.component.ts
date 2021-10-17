@@ -13,17 +13,14 @@ export class SobreNosComponent implements OnInit {
   constructor(
     private router: Router,
     private auth: AuthService,
-    // private profile_name: string, 
-    // private profile_job: string, 
-    // private profile_description: string, 
-    // private profile_color: string,
-    // profile_image: string
+   
   ) { }
 
   ngOnInit() {
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
-  }
 
-}
+ 
+
+}}

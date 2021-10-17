@@ -67,7 +67,7 @@
         </div>
         <div class="footer-copyright text-center">
           <a [routerLink]="['/sobre-nos']" href="">
-            <p  class="text-light">Sobre nós</p>
+            <span class="text-light">Sobre nós</span>
           </a>
         </div>
       </div>
@@ -137,18 +137,44 @@
             </div>
             <div class="font-20 text-left">{{ item.titulo }}</div>
             <div class="m-12 text-left">{{ item.texto }}</div>
-            <div class="m-12 text-left mudaFonte">
-              <button (click)="getPostagemById(item.id)" (click)='curtida(item.id)' class="mudaFonte">
-                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <div class="m-12 text-center mudaFonte">
+              <button (click)="getPostagemById(item.id)" (click)='curtida(item.id)' class="mudaFonte bgBlue btn p-0">
+                <img src="https://i.imgur.com/bQ6QUon.png" alt="" width="100px" height="50px" class="bgBlue p-0">
               </button>
-              Curtidas: {{ item.curtidas }}
-              <button (click)="getPostagemById(item.id)" (click)='descurtida(item.id)' class="mudaFonte">
-                <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+              
+              Bolhas: {{ item.curtidas }}
+              <button (click)="getPostagemById(item.id)" (click)='descurtida(item.id)' class="mudaFonte bgBlue  btn">
+                <img src="https://i.imgur.com/sqUvqU7.png" alt="" width="100px" height="50px" class="bgBlue">
               </button>
             </div>
 
             <!--LEMBRAR DE APAGAR OS PEIXES E GATOS DO ASSETS DE ARTUR-->
             <div>
+              <img
+                src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png"
+                width="100px"
+                height="50px"
+              />
+              <img
+                src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png"
+                width="100px"
+                height="50px"
+              />
+              <img
+                src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png"
+                width="100px"
+                height="50px"
+              />
+              <img
+                src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png"
+                width="100px"
+                height="50px"
+              />
+              <img
+                src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png"
+                width="100px"
+                height="50px"
+              />
               <img
                 src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png"
                 width="100px"

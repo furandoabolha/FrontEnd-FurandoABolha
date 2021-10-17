@@ -52,17 +52,32 @@ export class MinhasPostagensComponent implements OnInit {
     }
 
     this.auth.refreshToken();
-    
-    if (environment.token == '') {
-      this.router.navigate(['/entrar']);
-    }
-    
-    this.auth.refreshToken();
-    this.findByIdUser(this.idUser);
-    this.findByIdUsuario();
+    this.findByIdUser(this.idUser)
+    this.getAllPostagens();
+    this.curtida(this.idUser);
+    this.getPostagemById(this.idUser)
+  }
+  
+
+  postar() {
+    this.tema.id = this.idTema;
+    this.postagem.tema = this.tema;
+
+    this.usuario.id = this.idUser;
+    this.postagem.usuario = this.usuario;
+
+    this.postagemService
+      .postPostagem(this.postagem)
+      .subscribe((resp: Postagem) => {
+        this.postagem = resp;
+        alert('Postagem realizada com sucesso');
+        this.postagem = new Postagem();
+        this.getAllPostagens();
+      });
   }
 
 
+  
   findByIdUser(id: number){
     this.auth.getByIdUser(id).subscribe((resp: Usuario) => {
       this.usuario = resp
@@ -87,25 +102,6 @@ export class MinhasPostagensComponent implements OnInit {
       this.postagem = resp
    })
   }
-  
-
-  postar() {
-    this.tema.id = this.idTema;
-    this.postagem.tema = this.tema;
-
-    this.usuario.id = this.idUser;
-    this.postagem.usuario = this.usuario;
-
-    this.postagemService
-      .postPostagem(this.postagem)
-      .subscribe((resp: Postagem) => {
-        this.postagem = resp;
-        alert('Postagem realizada com sucesso');
-        this.postagem = new Postagem();
-        this.getAllPostagens();
-      });
-  }
-
 
   getAllTemas() {
     this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
@@ -121,7 +117,7 @@ export class MinhasPostagensComponent implements OnInit {
 
   curtida(id:number){
     this.postagemService.putCurtir(id).subscribe(()=>{
-      this.getAllPostagens()
+      this.getPostagemById(this.idUser)
     })
   }
 
