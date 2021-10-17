@@ -120,23 +120,15 @@
         <div *ngFor="let item of usuario.postagem">
           <div class="card-body bgBlue text-white">
             <section class="testimonials">
-              <div class="row">
-                <div class="testimonials-col">
-                  <img src="{{ item.usuario.foto }}" />
-                  <div class="font-20 nomefeed mt-4">
-                    <h3>{{ item.usuario.nome }}</h3>
-                  </div>
-                </div>
-              </div>
               <div class="font-20 text-left">{{ item.titulo }}</div>
               <div class="m-12 text-left">{{ item.texto }}</div>
               <div class="m-12 text-left mudaFonte">
-                <button (click)="getPostagemById(item.id)" (click)='curtida(item.id)' class="mudaFonte">
-                  <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                <button (click)="getPostagemById(item.id)" (click)='curtida(item.id)' class="mudaFonte bgBlue btn">
+                  <img src="https://i.imgur.com/bQ6QUon.png" alt="" width="100px" height="50px" class="bgBlue">
                 </button>
                 Curtidas: {{ item.curtidas }}
-                <button (click)="getPostagemById(item.id)" (click)='descurtida(item.id)' class="mudaFonte">
-                  <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                <button (click)="getPostagemById(item.id)" (click)='descurtida(item.id)' class="mudaFonte bgBlue btn">
+                  <img src="https://i.imgur.com/sqUvqU7.png" alt="" width="100px" height="50px" class="bgBlue">
                 </button>
               </div>
   
