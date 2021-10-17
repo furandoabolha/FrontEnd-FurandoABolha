@@ -14,7 +14,7 @@
 
 .card-block-two {
   background-color: var(--body-bg-color);/*VERIFICAFR COR DE FUNDO*/
-  min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -220,4 +220,8 @@
   }
 .hr{
   height: 10px;
+}
+
+.ajeita{
+  margin-left: 18.19%;
 }
