@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-sobre-nos-a-revanche',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobreNosARevancheComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private auth: AuthService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // if (environment.token == '') {
+    //   this.router.navigate(['/entrar']);
+    // }
+
+    // this.auth.refreshToken();
   }
 
 }
