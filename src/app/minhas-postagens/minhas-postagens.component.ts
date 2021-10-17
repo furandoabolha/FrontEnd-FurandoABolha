@@ -56,19 +56,20 @@ export class MinhasPostagensComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
-
-    this.auth.refreshToken();
     
+    this.auth.refreshToken();
+    this.findByIdUser(this.idUser)
     this.getAllPostagens();
   }
 
 
-  findByIdUser(){
+  findByIdUser(id: number){
     this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
 
+ 
   
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {

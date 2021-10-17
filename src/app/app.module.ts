@@ -19,12 +19,9 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { ContatoComponent } from './contato/contato.component';
 import { TemasComponent } from './temas/temas.component';
-<<<<<<< HEAD
 import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
-=======
-import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
->>>>>>> 6934369191580b9e9ca8be0e7eaf385dd8aab73c
+
 
 
 

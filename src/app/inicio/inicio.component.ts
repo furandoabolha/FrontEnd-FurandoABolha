@@ -45,7 +45,6 @@ export class InicioComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
-
     this.auth.refreshToken();
     
     this.getAllTemas();
