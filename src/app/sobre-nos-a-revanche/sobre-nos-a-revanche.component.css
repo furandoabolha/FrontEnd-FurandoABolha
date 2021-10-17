@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --title-font: "Lato", monospace;
+  --content-font: "Montserrat", monospace;
+}
+
+.card-block-two {
+  background-color: var(--body-bg-color);/*VERIFICAFR COR DE FUNDO*/
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card-block-two .card {
+  width: 30%;
+  max-width: 330px;
+  min-width: 330px;
+  transform: scale(0.75);
+  height: 390px;
+  margin: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 2em;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 5px 5px 10p rgb(22, 124, 172);
+}
+
+.profile-content {
+  width: 100%;
+  height: 150%;
+}
+
+/*POSIÇÃO DA FOTO ANTES DO HOVER*/
+.profile-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0.05em;
+  margin-top: -10px;
+}
+
+/*MUDA O CURSOR + TAMANHO DOS BOTÕES*/
+.linkedin-profile,
+.github-profile {
+  width: 35px;
+  cursor: pointer;
+}
+
+/*TAMANHO DAS IMAGENS*/
+.linkedin-profile img,
+.github-profile img {
+  width: 35px;
+}
+
+.profile-image {
+  width: -150px;
+}
+
+/*FORMATAÇÃO IMAGEM EM CIRUCLO*/
+.profile-image img {
+  width: 175px;
+  border-radius: 50%;
+}
+
+/*CONFIG NOME/JOB CENTRO*/
+.profile-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  margin: 0.5em;
+}
+
+/*FORMATAÇÃO NOME*/
+.profile-title h2 {
+  font-family: var(--title-font);
+  text-align: center ;
+  padding-top: 10px;
+}
+
+/*FORMATAÇÃO RESUME*/
+.profile-bottom p::before {
+  content: open-quote;
+  font-size: 1em;
+  color: rgb(211, 211, 211);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+/*formatação job*/
+.profile-title h4 {
+  font-family: var(--title-font);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+/*BREGUETE VERMELHO */
+.profile-title::after {
+  content: "";
+  width: 25%;
+  height: 0.3em;
+  margin-top: 10px;
+  border-radius: 50px;
+  background: rgb(199, 0, 0);
+}
+
+/*FORMATAÇÃO RESUME*/
+.profile-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: grey; */
+}
+
+/*FORMATAÇÃO LINK- RESUME*/
+.profile-bottom .full-profile-link {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-family: var(--title-font);
+  font-weight: 800;
+}
+
+/*ESCONDE OS ICONES GIT E CODE PEN*/
+  .linkedin-profile,
+  .github-profile {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.3s linear, transform 0.3s linear;
+  }
+
+/*HOVERS GIT E CODEPEN*/
+.linkedin-profile:hover img {
+    transform: scale(1.2) ;
+    transition: transform 0.2s linear ;
+  }
+  .github-profile:hover img {
+    transform: scale(1.2);
+    transition: transform 0.2s linear;
+  }
+
+/*TAMANHO DA IMAGEM 'DEPOIS' DO HOVER*/
+  .profile-image {
+    transform: scale(1.5) translateY(20%);
+    transition: transform 0.3s linear;
+  }
+
+/*TAMANHO DO NOME 'DEPOIS' DO HOVER*/
+  .profile-title {
+    transform: scale(1.2) translateY(90%);
+    transition: transform 0.3s linear;
+    padding-top: 3px;
+    text-justify: distribute;
+  }
+/*ESCONDE BREGUETE VERMELHO ANTES DO HOVER*/
+  .profile-title::after {
+    transform: scale(0.5) translateY(30px);
+    
+    transition: transform 0.3s linear;
+    
+  }
+/*TEXTO DE TRÁS TRANSPARENTE*/
+  .profile-bottom {
+    opacity: 0;
+    
+  }
+
+/*DESAPARECE ICONES DO GIT E CODEPEN*/
+  .card-three:hover .linkedin-profile,
+  .card-three:hover .github-profile {
+    opacity: 1;
+    transform: scale(1);
+    
+  }
+
+/*LUGAR DO HOVER GIT E CODE*/
+  .card-three:hover .profile-image,
+  .card-three:hover .profile-title {
+    transform: scale(1) translateY(0);
+    align-items: center;
+    text-size-adjust: +10%;
+    
+  }
+
+/*SOME BREGUETE VERMELHO*/
+  .card-three:hover .profile-title::after {
+    transform: scale(1.5);
+  }
+/*SOME PARTE DEBAIXO*/
+  .card-three:hover .profile-bottom {
+    opacity: 1;
+    transition: opacity 0.3s linear 0.1s;
+  }
+
+/*RESUME VERMELHO - HOVER*/
+  .full-profile-link:hover {
+    color: rgb(199, 0, 0) !important;
+  }
+
+  .card-block-two:hover .card {
+    transform: scale(0.8);
+    transition: ease-in-out;
+    
+  }
+.hr{
+  height: 10px;
+}
