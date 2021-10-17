@@ -10,26 +10,13 @@ a{
 .nav-tabs{
 	width: 30%;
 }
-.fa{
-    font-size: 5000pt;
-}
-.fa-pencil-square-o{
-    font-size: 500pt;
-}
+
 #div1{
     background-color: rgb(9,18,58);
     float: right;
     height: 100vh;
      
 }
-
-.edit{
-    position: absolute; 
-    margin-left: 50px;
-}
-li {
-    list-style-type: none;
-  }
 
 
 .bgBlue{

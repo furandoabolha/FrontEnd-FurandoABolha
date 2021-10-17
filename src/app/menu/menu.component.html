@@ -34,6 +34,8 @@
             type="search"
             placeholder="Postagem por tema"
             aria-label="Pesquisar"
+            [(ngModel)]="tituloPost"
+            (click)="pesquisarProdutos(tituloPost)"
           />
           <a href="" class="fontBlue">
             <img
@@ -46,7 +48,6 @@
           </a>
         </form>
       </li>
-    
 
       <!--LI DOS ICONES DE POSTAGEM E TEMA-->
       <li class="form-inline margintananan text-muted">
@@ -68,7 +69,11 @@
       </li>
 
       <li class="form-inline ml-5 text-muted text-center">
-        <a href="" class="text-muted">
+        <a
+          [routerLink]="['/minhas-postagens']"
+          class="text-muted"
+          (click)="findByIdUser()"
+        >
           <i class="fa fa-list-alt fa-lg" aria-hidden="true">
             <p class="m-0">Minhas Postagens</p>
           </i>
@@ -83,11 +88,13 @@
         </a>
       </li>
     </ul>
-    
 
     <ul class="navbar-nav ml-auto d-flex align-items-center mt-3">
       <li class="nav-item pl-3">
-        <a (click)="sair()" class="m-0 font-weight-bold fs-16 text-muted">
+        <a
+          [routerLink]="['/entrar']"
+          class="m-0 font-weight-bold fs-16 text-muted"
+        >
           <i class="material-icons"
             >exit_to_app
             <p>Sair</p>

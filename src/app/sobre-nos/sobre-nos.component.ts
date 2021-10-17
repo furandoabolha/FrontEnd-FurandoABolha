@@ -20,13 +20,10 @@ export class SobreNosComponent implements OnInit {
     // profile_image: string
   ) { }
 
-  ngOnInit(){
-    // if (environment.token == '') {
-    //   this.router.navigate(['/entrar']);
-    // }
-
-    // this.auth.refreshToken();
-    
+  ngOnInit() {
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
+    }
   }
 
 }

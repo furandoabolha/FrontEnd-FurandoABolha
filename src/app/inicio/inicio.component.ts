@@ -22,6 +22,7 @@ export class InicioComponent implements OnInit {
 
   foto = environment.foto;
   nome = environment.nome;
+  id = environment.id;
 
   //!variaveis para o usuário
   idUser = environment.id;
@@ -30,6 +31,7 @@ export class InicioComponent implements OnInit {
   //? variaveis para a postagem
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
+  idPostagem = environment.id;
 
   constructor(
     private router: Router,
@@ -39,10 +41,10 @@ export class InicioComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scroll(0,0)
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
-
     this.auth.refreshToken();
     
     this.getAllTemas();
@@ -60,6 +62,13 @@ export class InicioComponent implements OnInit {
       this.tema = resp;
     });
   }
+//vamo ver se vai funfar
+  getPostagemById(id: number){
+    this.postagemService.getPostagemById(id).subscribe((resp: Postagem)=>{
+      this.postagem = resp
+   })
+  }
+
   findByIdUser(){
     this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
       this.usuario = resp
@@ -89,5 +98,23 @@ export class InicioComponent implements OnInit {
         this.getAllPostagens();
       });
   }
+
+
+
+  //implementacao do putCurtir
+
+  curtida(id:number){
+    this.postagemService.putCurtir(id).subscribe(()=>{
+      this.getAllPostagens()
+    })
+  }
+
+  
+  descurtida(id:number){
+    this.postagemService.putDescurtir(id).subscribe(()=>{
+      this.getAllPostagens()
+    })
+  }
+
 }
 

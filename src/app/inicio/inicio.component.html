@@ -66,8 +66,8 @@
           <span class="text-light">furando a bolha ©</span>
         </div>
         <div class="footer-copyright text-center">
-          <a [routerLink]="['/a-revanche']" href="">
-            <span class="text-light">Sobre nós</span>
+          <a [routerLink]="['/sobre-nos']" href="">
+            <p  class="text-light">Sobre nós</p>
           </a>
         </div>
       </div>
@@ -81,9 +81,15 @@
       <div class="row"></div>
       <div class="row margintopimg justify-content-center">
         <div class="testimonials-col">
-          <img class="imgsub" src="{{ foto }}" />
+         
+          <img class="imgsub" src="{{ foto }}" > <li class="nav-item edit">
+           
+        
+            </li>
+         
           <div class="font-20 nomefeed mt-4">
             <h3>{{ nome }}</h3>
+            <a [routerLink]="['/user-edit', id]">    <p ><small class="text-white">Editar</small> <i class="fa fa-pencil-square-o justify-content-center" aria-hidden=true></i></p></a>
           </div>
         </div>
       </div>
@@ -123,6 +129,7 @@
             <div class="row">
               <div class="testimonials-col">
                 <img src="{{ item.usuario.foto }}" />
+               
                 <div class="font-20 nomefeed mt-4">
                   <h3>{{ item.usuario.nome }}</h3>
                 </div>
@@ -130,8 +137,24 @@
             </div>
             <div class="font-20 text-left">{{ item.titulo }}</div>
             <div class="m-12 text-left">{{ item.texto }}</div>
+            <div class="m-12 text-left mudaFonte">
+              <button (click)="getPostagemById(item.id)" (click)='curtida(item.id)' class="mudaFonte">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+              </button>
+              Curtidas: {{ item.curtidas }}
+              <button (click)="getPostagemById(item.id)" (click)='descurtida(item.id)' class="mudaFonte">
+                <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+              </button>
+            </div>
+
             <!--LEMBRAR DE APAGAR OS PEIXES E GATOS DO ASSETS DE ARTUR-->
-            <div><img src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png" width="100px" height="50px" /></div>
+            <div>
+              <img
+                src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png"
+                width="100px"
+                height="50px"
+              />
+            </div>
           </section>
         </div>
       </div>
@@ -139,18 +162,6 @@
     </div>
     <!--Fim do Feed-->
 
-
-
-
-
-
-
-
-
-
-
-
-    
     <!-- Modal -->
     <div
       class="modal fade"
@@ -160,7 +171,7 @@
       aria-labelledby="TituloModalCentralizado"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered " role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="TituloModalCentralizado">

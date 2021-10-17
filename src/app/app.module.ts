@@ -19,8 +19,12 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { ContatoComponent } from './contato/contato.component';
 import { TemasComponent } from './temas/temas.component';
-import { SobreNosReservaComponent } from './sobre-nos-reserva/sobre-nos-reserva.component';
+
 import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-revanche.component';
+import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+
+
 
 
 
@@ -40,8 +44,9 @@ import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-r
     PostagemEditComponent,
     ContatoComponent,
     TemasComponent,
-    SobreNosReservaComponent,
     SobreNosARevancheComponent,
+    MinhasPostagensComponent,
+    UsuarioEditComponent,
 
 
   
