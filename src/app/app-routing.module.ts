@@ -14,6 +14,7 @@ import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-r
 import { SobreNosReservaComponent } from './sobre-nos-reserva/sobre-nos-reserva.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemasComponent } from './temas/temas.component';
 
 
 
