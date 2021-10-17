@@ -11,7 +11,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-revanche.component';
-import { SobreNosReservaComponent } from './sobre-nos-reserva/sobre-nos-reserva.component';
+
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
 import { TemasComponent } from './temas/temas.component';
@@ -25,12 +25,12 @@ const routes: Routes = [
   {path: 'inicio', component:InicioComponent},
   {path: 'tema', component:TemaComponent},
   {path: 'contato', component:ContatoComponent},
+  {path:'ninguemliga', component:SobreNosComponent},
+
+  {path: 'sobre-nos', component:SobreNosARevancheComponent},
   {path: 'temas', component:TemasComponent},
   {path: 'contato', component:ContatoComponent},
   {path: 'minhas-postagens', component:MinhasPostagensComponent},
-  {path:'sobre-nos', component:SobreNosComponent},
-  {path:'nos-sobre', component:SobreNosReservaComponent},
-  {path: 'a-revanche', component:SobreNosARevancheComponent},
     
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'tema-delete/:id', component: TemaDeleteComponent},
