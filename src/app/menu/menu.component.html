@@ -35,7 +35,7 @@
             placeholder="Postagem por tema"
             aria-label="Pesquisar"
             [(ngModel)]="tituloPost"
-            (click)="pesquisarProdutos(tituloPost)"
+            (keyup)="pesquisarProdutos(tituloPost)"
           />
           <a href="" class="fontBlue">
             <img

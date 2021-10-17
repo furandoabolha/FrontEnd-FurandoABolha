@@ -1,7 +1,7 @@
 import { AuthService } from './../service/auth.service';
 import { Usuario } from './../Model/Usuario';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 // importações do tema
 import { TemaService } from './../service/tema.service';
@@ -24,6 +24,9 @@ export class InicioComponent implements OnInit {
   nome = environment.nome;
   id = environment.id;
 
+
+
+  stringPesquisa: string
   //!variaveis para o usuário
   idUser = environment.id;
   usuario: Usuario = new Usuario();
@@ -33,12 +36,26 @@ export class InicioComponent implements OnInit {
   listaPostagens: Postagem[];
   idPostagem = environment.id;
 
+  tituloPost: string
+
   constructor(
     private router: Router,
     private auth: AuthService,
     private temaService: TemaService,
-    private postagemService: PostagemService
-  ) {}
+    private postagemService: PostagemService,
+    private route : ActivatedRoute
+  ) {
+    router.events.subscribe((e) => {
+
+      if (e instanceof NavigationEnd) {
+        route.params.subscribe(p => {
+          this.stringPesquisa = p.nome
+        })
+
+      }
+
+    })
+  }
 
   ngOnInit() {
     window.scroll(0,0)
@@ -46,6 +63,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
     this.auth.refreshToken();
+    console.log("-->"+this.tituloPost)
     
     this.getAllTemas();
     this.getAllPostagens();
@@ -101,6 +119,7 @@ export class InicioComponent implements OnInit {
 
 
 
+
   //implementacao do putCurtir
 
   curtida(id:number){
@@ -115,6 +134,17 @@ export class InicioComponent implements OnInit {
       this.getAllPostagens()
     })
   }
+
+
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    }else{
+    this.postagemService.getPostagemByTitulo(this.tituloPost).subscribe((resp: Postagem[])=> {
+      this.listaPostagens = resp
+    })
+  }
+}
 
 }
 

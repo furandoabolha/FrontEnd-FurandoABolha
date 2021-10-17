@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../Model/Postagem';
 import { Usuario } from '../Model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { PostagemService } from '../service/postagem.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,6 +18,7 @@ export class MenuComponent implements OnInit {
   idUser = environment.id;
   usuario: Usuario = new Usuario();
 
+  listaPostagem: Postagem[]
 
   nome: string = environment.nome;
   foto = environment.foto;
@@ -26,7 +29,7 @@ export class MenuComponent implements OnInit {
   constructor(
     private router: Router,
     private auth: AuthService,
-    
+    private postagemService: PostagemService
     
     ) { }
 
@@ -54,6 +57,14 @@ export class MenuComponent implements OnInit {
 
   }
 
+  findByNome(){
+    
+    this.postagemService.getPostagemByTitulo(this.tituloPost).subscribe((resp: Postagem[]) => {
+      this.listaPostagem = resp
+      console.log(this.tituloPost)
+    })
+
+  }
 
 
 
