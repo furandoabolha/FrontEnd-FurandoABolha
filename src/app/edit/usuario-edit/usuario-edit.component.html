@@ -36,12 +36,12 @@
     
                             <div class="form-group">
                                 <label>Senha</label>
-                                <input (input)='confirmSenha($event)' type="password" class="linha" name="senha" id="senha" >
+                                <input (input)='confirmSenha($event)' type="password" class="linha" name="senha" id="senha"  >
                             </div>
     
                             <div class="form-group">
                                 <label for="confirmSenha">Confirmar Senha</label>
-                                <input [(ngModel)]="usuario.senha" type="password" class="linha" name="confirmSenha" id="confirmSenha" >
+                                <input [(ngModel)]='usuario.senha' type="password" class="linha" name="confirmSenha" id="confirmSenha" >
                             </div>
     
                             <div class="form-group">
@@ -68,8 +68,8 @@
     
     
                             <div class="d-flex justify-content-center">
-                                <button class="btn border-secondary mr-4" routerLink="/entrar">Cancelar</button>
-                                <button class="btn border-secondary mr-4" (click)="atualizar()" >Cadastrar</button>
+                                <button class="btn border-secondary mr-4" routerLink="/inicio">Cancelar</button>
+                                <button class="btn border-secondary mr-4" (click)="atualizar()" >Atualizar</button>
                             </div>
     
     
