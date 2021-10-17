@@ -1,41 +1,44 @@
 <body>
+  <div class="container mt-5" >
+    <div class="row d-flex align-items-lg-center">
+      <div class="col-md-6" id="img-bg"></div>
 
-	<div class="container">
+      <div class="col-md-6 bg-white d-flex justify-content-center" id="border">
+        <form id="waterform" method="post">
+          <h1 class="text-center">Fale conosco</h1>
 
-		<div class="row d-flex align-items-lg-center">
+          <div class="from-group mt-5" id="name-form">
+            <label for="name" class="p-0">Seu nome*</label>
+            <input type="text" id="name" name="name" class="linha" />
+          </div>
 
-			<div class="col-md-6 d-flex justify-content-center" id="img-bg"></div>
+          <div class="form-group" id="email-form">
+            <label for="email" class="p-0">Seu email*</label>
+            <input type="email" id="email" name="email" class="linha" />
+          </div>
 
-			<div class="col-md-6 bg-white" id="border">
+          <div class="form-group" id="message-form">
+            <label for="message" class="p-0">Sua mensagem</label>
+            <textarea id="message" name="message" class="linha"></textarea>
+          </div>
 
-				<form id="waterform" method="post">
+          <a
+            class="text-center btn btn-outline-info mt-4 mb-4"
+            href="mailto:furandoabolha2021@gmail.com?Subject=Sugestões,%20Denuncias,%20Reclamação"
+            >Enviar email</a
+          >
+          <a
+            type="reset"
+            value="Cancelar"
+            [routerLink]="['/inicio']"
+            class="btn btn-outline-dark mt-3"
+          >
+		  Cancelar
+          </a>
+        </form>
+      </div>
 
-
-					<h1>Fale conosco</h1>
-
-
-					<div class="formgroup" id="name-form">
-						<label for="name">Seu nome*</label>
-						<input type="text" id="name" name="name" />
-					</div>
-
-					<div class="formgroup" id="email-form">
-						<label for="email">Seu email*</label>
-						<input type="email" id="email" name="email" />
-					</div>
-
-					<div class="formgroup" id="message-form">
-						<label for="message">Sua mensagem</label>
-						<textarea id="message" name="message"></textarea>
-					</div>
-
-					<a class="text-center"
-						href="mailto:furandoabolha2021@gmail.com?Subject=Sugestões,%20Denuncias,%20Reclamação">Enviar
-						email</a>
-					<input type="reset" value="Cancelar" [routerLink]="['/inicio']">
-				</form>
-
-			</div>
-
-
-			<body>
+      <body></body>
+    </div>
+  </div>
+</body>
