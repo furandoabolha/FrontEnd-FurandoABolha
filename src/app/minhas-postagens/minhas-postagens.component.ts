@@ -58,17 +58,22 @@ export class MinhasPostagensComponent implements OnInit {
     }
     
     this.auth.refreshToken();
-    this.findByIdUser(this.idUser)
-    this.getAllPostagens();
+    this.findByIdUser(this.idUser);
+    this.findByIdUsuario();
   }
 
 
   findByIdUser(id: number){
-    this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
+    this.auth.getByIdUser(id).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
 
+  findByIdUsuario(){
+    this.auth.getByIdUser(this.idUser).subscribe((resp : Usuario) =>{
+      this.usuario = resp
+    })
+  }
  
   
   getAllPostagens() {
