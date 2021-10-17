@@ -36,6 +36,12 @@ export class AuthService {
     return this.http.post<Usuario>('https://furandoabolha.herokuapp.com/usuarios/cadastrar', user)
   }
 
+  
+  putUsuario(user: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('https://furandoabolha.herokuapp.com/usuarios/atualizar',user, this.token)
+  }
+
+
   logado(){
     let ok: boolean = false
 

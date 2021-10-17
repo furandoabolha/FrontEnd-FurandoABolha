@@ -22,6 +22,7 @@ export class InicioComponent implements OnInit {
 
   foto = environment.foto;
   nome = environment.nome;
+  id = environment.id;
 
   //!variaveis para o usuário
   idUser = environment.id;
