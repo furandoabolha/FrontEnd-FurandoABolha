@@ -68,4 +68,10 @@ export class PostagemEditComponent implements OnInit {
     })
   }
 
+   apagar(id: number){
+    this.postagemService.deletePostagem(id).subscribe(() => {
+      alert('postagem deletada com sucesso')
+    })
+  }
+
 }

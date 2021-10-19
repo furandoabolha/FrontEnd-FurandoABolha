@@ -15,6 +15,7 @@ import { TemaService } from '../service/tema.service';
 })
 export class MinhasPostagensComponent implements OnInit {
   
+
   
   //variaveis de postagem
   postagem: Postagem = new Postagem();
@@ -57,8 +58,18 @@ export class MinhasPostagensComponent implements OnInit {
     this.getAllPostagens();
     this.curtida(this.idUser);
     this.getPostagemById(this.idUser)
+   
   }
   
+
+    reload() {
+    if (this.auth.reload) {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/minhas-postagens']);
+        this.auth.reload = false;
+      });
+    }
+  }
 
   postar() {
     this.tema.id = this.idTema;
@@ -141,7 +152,12 @@ export class MinhasPostagensComponent implements OnInit {
     })
   }
 
-
+     apagar(id: number){
+    this.postagemService.deletePostagem(id).subscribe(() => {
+      alert('postagem deletada com sucesso')
+    this.reload();
+    })
+  }
 
 
   

@@ -10,6 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
 
+  reload = true;
 
   constructor(
     private http: HttpClient
