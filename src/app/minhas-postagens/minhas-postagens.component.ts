@@ -23,6 +23,7 @@ export class MinhasPostagensComponent implements OnInit {
 
 
     //!variaveis para o usuário
+    id = environment.id
     idUser = environment.id;
     usuario: Usuario = new Usuario();
 

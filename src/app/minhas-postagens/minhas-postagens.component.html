@@ -82,8 +82,12 @@
         <div class="row margintopimg justify-content-center">
           <div class="testimonials-col">
             <img class="imgsub" src="{{ foto }}" />
-            <div class="font-20 nomefeed mt-4">
+            <div class="font-20 nomefeed mt-4 d-flex justify-content-center">
               <h3>{{ nome }}</h3>
+              <a [routerLink]="['/user-edit', id]">
+                <i class="fs-Edit fa fa-pencil p-0" aria-hidden="true">
+                </i>
+              </a>
             </div>
           </div>
         </div>
