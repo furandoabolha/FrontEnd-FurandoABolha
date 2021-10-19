@@ -190,7 +190,7 @@
               </label>
               <select name="tema" id="tema" class="linha" (change)="findByIdTema()" [(ngModel)]="idTema">
                 <option *ngFor="let tema of listaTemas" value="{{ tema.id }}">
-                  {{ tema.descricao }}
+                  {{ tema.tema }}
                 </option>
               </select>
             </div>

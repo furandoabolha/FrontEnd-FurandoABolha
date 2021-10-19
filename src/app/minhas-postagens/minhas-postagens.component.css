@@ -152,3 +152,8 @@ ul.social-network li{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
+.marginbutton{
+    margin-right: 20px;
+}
