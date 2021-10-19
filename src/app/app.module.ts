@@ -23,6 +23,7 @@ import { TemasComponent } from './temas/temas.component';
 import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-revanche.component';
 import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 
@@ -55,7 +56,8 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule,
   ],
   providers: [{
     provide : LocationStrategy,

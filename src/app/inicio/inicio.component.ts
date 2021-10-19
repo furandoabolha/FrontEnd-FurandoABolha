@@ -33,6 +33,10 @@ export class InicioComponent implements OnInit {
   listaPostagens: Postagem[];
   idPostagem = environment.id;
 
+
+  key = 'data'
+  reverse = true;
+
   constructor(
     private router: Router,
     private auth: AuthService,
