@@ -9,6 +9,10 @@
 .bgBlue {
   background-color: rgb(9, 18, 58);
 }
+.fs-Edit{
+  font-size: 12pt !important;
+
+}
 
 .nomefeed {
   margin-left: -7%;
