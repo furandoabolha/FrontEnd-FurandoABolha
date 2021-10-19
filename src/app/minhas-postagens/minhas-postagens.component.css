@@ -1,4 +1,4 @@
-@import url(http://fonts.cdnfonts.com/css/bubbleboddy-neue-trial);
+@import url(https://fonts.cdnfonts.com/css/bubbleboddy-neue-trial);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
 
 
@@ -151,4 +151,9 @@ ul.social-network li{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+
+.marginbutton{
+    margin-right: 20px;
 }

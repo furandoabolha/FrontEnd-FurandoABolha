@@ -42,6 +42,14 @@ export class UsuarioEditComponent implements OnInit {
     this.tipoUsuario = event.target.value
   }
 
+  findByIdUsuario(id: number){
+    this.authService.getByIdUser(id).subscribe((resp: Usuario)=> {
+      this.usuario = resp
+    })
+
+
+  }
+
   atualizar(){
     this.usuario.tipoUsuario = this.tipoUsuario
 
@@ -54,7 +62,6 @@ export class UsuarioEditComponent implements OnInit {
         environment.token = "";
         environment.foto = "";
         environment.id = 0;
-        environment.tipo = "";
         environment.nome = "";
         this.router.navigate(['/entrar']);
       });
@@ -62,13 +69,7 @@ export class UsuarioEditComponent implements OnInit {
 
   }
 
-  findByIdUsuario(id: number){
-    this.authService.getByIdUser(id).subscribe((resp: Usuario)=> {
-      this.usuario = resp
-    })
-
-
-  }
+ 
 
  
   

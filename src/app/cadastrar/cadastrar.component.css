@@ -1,7 +1,7 @@
-@import url("http://fonts.cdnfonts.com/css/bubbleboddy-neue-trial");
+@import url("https://fonts.cdnfonts.com/css/bubbleboddy-neue-trial");
 *{
 
-    font-family: 'Bubbleboddy Neue Trial';
+    font-family: 'arial';
 }
 body{
 
@@ -22,7 +22,6 @@ body{
     width: 100%;
     min-height: 50vh;
     border-radius: 30px;
-    display:list-item;
     align-items:unset;
     padding: 15px;
     
@@ -40,7 +39,7 @@ body{
   margin: 0;
   outline: none;
   color: #8e8e94;
-  font-family: "Bubbleboddy Neue Trial", sans-serif;
+  /*font-family: "Bubbleboddy Neue Trial", sans-serif;*/
   font-weight: 200;
 
   width: 450px;
@@ -61,7 +60,7 @@ background: transparent;
   width: 450px;
   font-size: 16px;
   color: #8e8e94;
-  font-family: "Bubbleboddy Neue Trial", sans-serif;
+  /*font-family: "Bubbleboddy Neue Trial", sans-serif; */
   font-weight: 200;
 
   

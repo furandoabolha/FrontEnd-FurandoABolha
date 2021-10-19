@@ -1,4 +1,4 @@
-@import url("http://fonts.cdnfonts.com/css/bubbleboddy-neue-trial");
+@import url("https://fonts.cdnfonts.com/css/bubbleboddy-neue-trial");
 * {
   font-family: "Bubbleboddy Neue Trial";
 }
@@ -27,7 +27,6 @@ body {
   width: 100%;
   min-height: 50vh;
   border-radius: 30px;
-  display: list-item;
   align-items: unset;
   padding: 15px;
 }

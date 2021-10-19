@@ -11,53 +11,56 @@ import { TemaService } from '../service/tema.service';
 @Component({
   selector: 'app-minhas-postagens',
   templateUrl: './minhas-postagens.component.html',
-  styleUrls: ['./minhas-postagens.component.css']
+  styleUrls: ['./minhas-postagens.component.css'],
 })
 export class MinhasPostagensComponent implements OnInit {
-  
-  
   //variaveis de postagem
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
   idPostagem = environment.id;
 
+  //!variaveis para o usuário
+  id = environment.id;
+  idUser = environment.id;
+  usuario: Usuario = new Usuario();
 
-    //!variaveis para o usuário
-    idUser = environment.id;
-    usuario: Usuario = new Usuario();
+  //variaveis para o tema
+  listaTemas: Tema[];
+  idTema: number;
+  tema: Tema = new Tema();
 
-
-    //variaveis para o tema
-    listaTemas: Tema[];
-    idTema: number;
-    tema: Tema = new Tema();
-  
-    foto = environment.foto;
-    nome = environment.nome;
-  
-    
-
+  foto = environment.foto;
+  nome = environment.nome;
 
   constructor(
     private auth: AuthService,
     private postagemService: PostagemService,
     private router: Router,
     private temaService: TemaService
-  ) { }
+  ) {}
 
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit() {
+    window.scroll(0, 0);
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
 
     this.auth.refreshToken();
-    this.findByIdUser(this.idUser)
+    this.findByIdUser(this.idUser);
     this.getAllPostagens();
     this.curtida(this.idUser);
-    this.getPostagemById(this.idUser)
+    this.getPostagemById(this.idUser);
+
   }
-  
+
+  reload() {
+    if (this.auth.reload) {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/minhas-postagens']);
+        this.auth.reload = false;
+      });
+    }
+  }
 
   postar() {
     this.tema.id = this.idTema;
@@ -73,34 +76,32 @@ export class MinhasPostagensComponent implements OnInit {
         alert('Postagem realizada com sucesso');
         this.postagem = new Postagem();
         this.getAllPostagens();
+        this.reload();
       });
   }
 
-
-  
-  findByIdUser(id: number){
+  findByIdUser(id: number) {
     this.auth.getByIdUser(id).subscribe((resp: Usuario) => {
-      this.usuario = resp
-    })
+      this.usuario = resp;
+    });
   }
 
-  findByIdUsuario(){
-    this.auth.getByIdUser(this.idUser).subscribe((resp : Usuario) =>{
-      this.usuario = resp
-    })
+  findByIdUsuario() {
+    this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
+      this.usuario = resp;
+    });
   }
- 
-  
+
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp;
     });
   }
 
-  getPostagemById(id: number){
-    this.postagemService.getPostagemById(id).subscribe((resp: Postagem)=>{
-      this.postagem = resp
-   })
+  getPostagemById(id: number) {
+    this.postagemService.getPostagemById(id).subscribe((resp: Postagem) => {
+      this.postagem = resp;
+    });
   }
 
   getAllTemas() {
@@ -115,22 +116,37 @@ export class MinhasPostagensComponent implements OnInit {
     });
   }
 
-  curtida(id:number){
-    this.postagemService.putCurtir(id).subscribe(()=>{
-      this.getPostagemById(this.idUser)
-    })
+  curtida(id: number) {
+    this.postagemService.putCurtir(id).subscribe(() => {
+      this.getPostagemById(this.idUser);
+    });
   }
 
-  
-  descurtida(id:number){
-    this.postagemService.putDescurtir(id).subscribe(()=>{
-      this.getAllPostagens()
-    })
+  descurtida(id: number) {
+    this.postagemService.putDescurtir(id).subscribe(() => {
+      this.getAllPostagens();
+    });
   }
 
+  atualizar() {
+    this.tema.id = this.idTema;
+    this.postagem.tema = this.tema;
 
+    this.postagemService
+      .putPostagem(this.postagem)
+      .subscribe((resp: Postagem) => {
+        this.postagem = resp;
+        this.reload();
+        this.router.navigate(['/minhas-postagens']);
+        this.getAllPostagens();
+        alert('Postagem atualizada com sucesso!');
+      });
+  }
 
-  
-
-
+  apagar(id: number) {
+    this.postagemService.deletePostagem(id).subscribe(() => {
+      alert('postagem deletada com sucesso');
+      this.reload();
+    });
+  }
 }

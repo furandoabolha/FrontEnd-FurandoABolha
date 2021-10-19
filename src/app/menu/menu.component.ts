@@ -48,12 +48,12 @@ export class MenuComponent implements OnInit {
   }
 
   sair(){
-    this.router.navigate(['/entrar'])
     environment.token = ''
     environment.id = 0
     environment.foto = ''
     environment.tipo = ''
     environment.nome = ''
+    this.router.navigate(['/entrar'])
 
   }
 

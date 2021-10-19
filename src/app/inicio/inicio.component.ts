@@ -38,6 +38,9 @@ export class InicioComponent implements OnInit {
 
   tituloPost: string
 
+  key = 'data'
+  reverse = true;
+
   constructor(
     private router: Router,
     private auth: AuthService,
