@@ -96,12 +96,17 @@
             <div class="sub-main">
               <div class="row justify-content-center">
                 <button
-                  class="btn btn-outline-light"
+                  class="btn btn-outline-light mr-3"
                   data-toggle="modal"
                   data-target="#novaPostagem"
+                  (click)="getAllTemas()"
                 >
                   Post
                 </button>
+
+                <a [routerLink]="['/user-edit', id]">
+                  <button class="btn btn-outline-light">Editar Perfil</button>
+                </a>
               </div>
             </div>
           </div>
