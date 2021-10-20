@@ -32,6 +32,10 @@ export class MinhasPostagensComponent implements OnInit {
   foto = environment.foto;
   nome = environment.nome;
 
+
+  key = 'data'
+  reverse = true;
+
   constructor(
     private auth: AuthService,
     private postagemService: PostagemService,
@@ -75,8 +79,8 @@ export class MinhasPostagensComponent implements OnInit {
         this.postagem = resp;
         alert('Postagem realizada com sucesso');
         this.postagem = new Postagem();
-        this.getAllPostagens();
-        this.reload();
+        this.getAllPostagens()
+        this.router.navigate(['/inicio']);
       });
   }
 
@@ -118,13 +122,11 @@ export class MinhasPostagensComponent implements OnInit {
 
   curtida(id: number) {
     this.postagemService.putCurtir(id).subscribe(() => {
-      this.getPostagemById(this.idUser);
     });
   }
 
   descurtida(id: number) {
     this.postagemService.putDescurtir(id).subscribe(() => {
-      this.getAllPostagens();
     });
   }
 
@@ -136,17 +138,17 @@ export class MinhasPostagensComponent implements OnInit {
       .putPostagem(this.postagem)
       .subscribe((resp: Postagem) => {
         this.postagem = resp;
-        this.reload();
-        this.router.navigate(['/minhas-postagens']);
+        this.router.navigate(['/inicio']);
         this.getAllPostagens();
         alert('Postagem atualizada com sucesso!');
+        
       });
   }
 
   apagar(id: number) {
     this.postagemService.deletePostagem(id).subscribe(() => {
       alert('postagem deletada com sucesso');
-      this.reload();
+      this.router.navigate(['/inicio']);
     });
   }
 }
