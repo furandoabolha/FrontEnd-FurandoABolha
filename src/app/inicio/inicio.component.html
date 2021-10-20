@@ -127,8 +127,17 @@
         role="tablist"
       ></div>
     </nav>
-    <div class="card-rows justify-content-center">
+
+    <div class="card-rows justify-content-center margin-18">
+      <div class="col-md-4">
+        <div class="form-group">
+            <input type="text" class="form-control" id="titulo" placeholder="Pesquise por titulo" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+        </div>
+
+    </div>
+    
       <div *ngFor="let item of listaPostagens | orderBy: key:reverse">
+        
         <div class="card-body bgBlue text-white">
           <section class="testimonials">
             <div class="row">
