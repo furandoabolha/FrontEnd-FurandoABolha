@@ -23,6 +23,10 @@ a{
      
 }
 
+.margi{
+    text-align:left
+}
+
 .edit{
     position: absolute; 
     margin-left: 50px;

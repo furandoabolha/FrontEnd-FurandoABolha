@@ -137,11 +137,11 @@
             </div>
   
         </div>
-      <div *ngFor="let item of listaPostagens">
+      <div *ngFor="let item of listaPostagens | orderBy : key : reverse">
         <div class="card-body bgBlue text-white">
           <section class="testimonials">
             <div class="row">
-              <div class="testimonials-col">
+              <div class="testimonials-col ">
                 <img src="{{ item.usuario.foto }}" />
 
                 <div class="nomefeed mt-4">
