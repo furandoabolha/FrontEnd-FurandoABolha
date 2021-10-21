@@ -67,10 +67,12 @@ export class MenuComponent implements OnInit {
   }
 
 
-/*
-  pesquisarProdutos(titulo: string) {
-    this.router.navigate([`https://furandoabolha.herokuapp.com/postagens/titulo/${titulo}`])
-  } */
+
+
+
+  pesquisarPostagem(nome: string) {
+    this.router.navigate([`/inicio/search/${nome}`])
+  }
 
 }
 

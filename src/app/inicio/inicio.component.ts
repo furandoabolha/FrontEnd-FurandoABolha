@@ -26,12 +26,13 @@ export class InicioComponent implements OnInit {
 
 
 
-  stringPesquisa: string
   //!variaveis para o usuário
   idUser = environment.id;
   usuario: Usuario = new Usuario();
 
   //? variaveis para a postagem
+  stringPesquisa: string
+  postagem1 = Postagem
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
   idPostagem = environment.id;
@@ -55,10 +56,11 @@ export class InicioComponent implements OnInit {
           this.stringPesquisa = p.nome
         })
 
+        this.BuscarPostagem(this.stringPesquisa)
       }
-
     })
   }
+  
 
   ngOnInit() {
     window.scroll(0,0)
@@ -66,8 +68,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
     this.auth.refreshToken();
-    console.log("-->"+this.tituloPost)
-    
+    this.stringPesquisa = ""
     this.getAllTemas();
     this.getAllPostagens();
   }
@@ -96,6 +97,17 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  BuscarPostagem(nome: string) {
+    if (this.stringPesquisa != undefined) {
+      this.postagemService.getPostagemByTitulo(nome).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    } else {
+      this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+}
 
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {

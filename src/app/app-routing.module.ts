@@ -18,11 +18,13 @@ import { TemasComponent } from './temas/temas.component';
 
 
 
+
 const routes: Routes = [
   {path:'', redirectTo: 'entrar', pathMatch: 'full'},
   {path:'cadastrar', component:CadastrarComponent},
   {path: 'entrar', component:EntrarComponent},
   {path: 'inicio', component:InicioComponent},
+  {path:'inicio/search/:nome', component: InicioComponent},   // o teste ta aqui
   {path: 'tema', component:TemaComponent},
   {path: 'contato', component:ContatoComponent},
   {path:'ninguemliga', component:SobreNosComponent},
@@ -36,7 +38,8 @@ const routes: Routes = [
   {path: 'tema-delete/:id', component: TemaDeleteComponent},
   {path: 'postagem-edit/:id', component: PostagemEditComponent},
   {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
-   {path: 'user-edit/:id', component: UsuarioEditComponent }
+   {path: 'user-edit/:id', component: UsuarioEditComponent },
+   
 
 ];
 

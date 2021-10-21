@@ -96,7 +96,9 @@
           <div class="sub-main">
             <div class="row justify-content-center">
               <a [routerLink]="['/user-edit', id]">
-                <button class="btn btn-outline-light  mr-3">Editar Perfil</button>
+                <button class="btn btn-outline-light mr-3">
+                  Editar Perfil
+                </button>
               </a>
               <button
                 class="btn btn-outline-light"
@@ -105,8 +107,6 @@
               >
                 Post
               </button>
-
-
             </div>
           </div>
         </div>
@@ -127,15 +127,9 @@
     </nav>
 
     <div class="card-rows justify-content-center margin-18">
-      <div class="col-md-4">
-        <div class="form-group">
-            <input type="text" class="form-control" id="titulo" placeholder="Pesquise por titulo" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
-        </div>
+      
 
-    </div>
-    
       <div *ngFor="let item of listaPostagens | orderBy: key:reverse">
-        
         <div class="card-body bgBlue text-white">
           <section class="testimonials">
             <div class="row">
@@ -171,7 +165,7 @@
               </button>
 
               Furos: {{ item.curtidas }}
-              
+
               <button
                 (click)="getPostagemById(item.id)"
                 (click)="descurtida(item.id)"
@@ -202,8 +196,6 @@
       <!-- ! Fim dos cards de Postagem por Tema -->
     </div>
     <!--Fim do Feed-->
-
-  
 
     <!-- Modal -->
     <div
