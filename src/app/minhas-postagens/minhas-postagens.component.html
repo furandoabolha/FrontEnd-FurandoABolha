@@ -185,26 +185,7 @@
               Bolhas: {{ item.descurtidas }}
             </div>
 
-            <!--LEMBRAR DE APAGAR OS PEIXES E GATOS DO ASSETS DE ARTUR-->
-            <div>
-              <button
-                type="button"
-                class="btn btn-outline-info marginbutton"
-                data-toggle="modal"
-                data-target="#editPostagem"
-                (click)="getPostagemById(item.id)"
-                (click)="getAllTemas()"
-              >
-                Editar
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-danger"
-                (click)="apagar(item.id)"
-              >
-                Deletar
-              </button>
-            </div>
+            
 
             <div>
               <img
@@ -215,7 +196,101 @@
             </div>
           </section>
         </div>
+
+        <!-- Modal Editar Postagem -->
+        <div
+          class="modal fade"
+          id="editPostagem"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="TituloModalCentralizado"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">
+                  Editar Postagem
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Fechar"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="titulo">Título</label>
+                  <input
+                    type="text"
+                    class="linha"
+                    id="titulo"
+                    placeholder="Digite o título"
+                    [(ngModel)]="postagem.titulo"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="texto">Texto</label>
+                  <textarea
+                    class="linha"
+                    name="texto"
+                    id="texto"
+                    rows="3"
+                    [(ngModel)]="postagem.texto"
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="texto"
+                    >Escolha um tema ou
+                    <a data-dismiss="modal" routerLink="/tema"
+                      >cadastre um novo</a
+                    >:
+                  </label>
+                  <select
+                    name="tema"
+                    id="tema"
+                    class="linha"
+                    (change)="findByIdTema()"
+                    [(ngModel)]="idTema"
+                  >
+                    <option
+                      *ngFor="let tema of listaTemas"
+                      value="{{ tema.id }}"
+                    >
+                      {{ tema.descricao }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-outline-light bgBlue text-white"
+                  (click)="atualizar()"
+                  data-dismiss="modal"
+                >
+                  Atualizar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-dismiss="modal"
+                  (click)="apagar(item.id)"
+                >
+                  Deletar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Fim do modal editar postagem-->
       </div>
+
       <!-- ! Fim dos cards de Postagem por Tema -->
     </div>
     <!--Fim do Feed-->
@@ -301,88 +376,5 @@
         </div>
       </div>
     </div>
-
-    <!-- Modal Editar Postagem -->
-    <div
-      class="modal fade"
-      id="editPostagem"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="TituloModalCentralizado"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="TituloModalCentralizado">
-              Editar Postagem
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Fechar"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="titulo">Título</label>
-              <input
-                type="text"
-                class="linha"
-                id="titulo"
-                placeholder="Digite o título"
-                [(ngModel)]="postagem.titulo"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="texto">Texto</label>
-              <textarea
-                class="linha"
-                name="texto"
-                id="texto"
-                rows="3"
-                [(ngModel)]="postagem.texto"
-              ></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="texto"
-                >Escolha um tema ou
-                <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>:
-              </label>
-              <select
-                name="tema"
-                id="tema"
-                class="linha"
-                (change)="findByIdTema()"
-                [(ngModel)]="idTema"
-              >
-                <option *ngFor="let tema of listaTemas" value="{{ tema.id }}">
-                  {{ tema.descricao }}
-                </option>
-              </select>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-outline-light bgBlue text-white"
-              (click)="atualizar()"
-              data-dismiss="modal"
-            >
-              Atualizar
-            </button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal" >
-              Deletar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--Fim do modal editar postagem-->
   </div>
 </div>
