@@ -36,11 +36,16 @@ export class InicioComponent implements OnInit {
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
   idPostagem = environment.id;
+  listaPostagemMaisCurtidas: Postagem[]
 
   tituloPost: string
 
   key = 'data'
+
+  keyy = 'curtidas'
   reverse = true;
+
+  
 
   constructor(
     private router: Router,
