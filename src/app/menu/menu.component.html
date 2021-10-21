@@ -12,17 +12,24 @@
         </a>
       </li>
 
+      <!--
       <li class="nav-item active text-center">
         <form class="form-inline ml-5">
-          <input class="linha pesquisa" type="search" placeholder="Postagem por tema" aria-label="Pesquisar"
-            [(ngModel)]="tituloPost" name="tituloPost" (click)="pesquisarProdutos(tituloPost)" />
+          <input
+            class="linha pesquisa"
+            type="search"
+            placeholder="Postagem por tema"
+            aria-label="Pesquisar"
+            [(ngModel)]="tituloPost"
+            (keyup)="pesquisarProdutos(tituloPost)"
+          />
           <a href="" class="fontBlue">
             <img
               src="https://media.discordapp.net/attachments/890758555806859317/898188982297452594/Design_sem_nome_20.png?width=390&height=390"
               alt="lupa" width="40px" height="40px" id="imgLupa" />
           </a>
         </form>
-      </li>
+      </li> -->
 
       <!--LI DOS ICONES DE POSTAGEM E TEMA-->
       <li class="form-inline margintananan text-muted">
