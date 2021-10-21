@@ -1,10 +1,22 @@
 @import url(https://fonts.cdnfonts.com/css/bubbleboddy-neue-trial);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+@import url(https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap);
 
+
+
+
+.mudaFonte{
+    font-family: 'Bubblegum Sans' !important;
+}
+
+.marginLeft{
+    margin-left:30%;
+}
 
 
 a{
     color: rgb(9,18,58);
+    cursor: pointer;
 }
 
 .nav-tabs{
@@ -125,6 +137,11 @@ ul.social-network li{
 }
 
 
+
+.fa-ellipsis-h{
+    font-size: 18px !important;
+    padding: 0px;
+}
 
 
 .fa{

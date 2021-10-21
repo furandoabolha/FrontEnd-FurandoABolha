@@ -84,9 +84,6 @@
           <img class="imgsub" src="{{ foto }}" />
           <div class="font-20 nomefeed mt-4 d-flex justify-content-center">
             <h3>{{ nome }}</h3>
-            <a [routerLink]="['/user-edit', id]">
-              <i class="fs-Edit fa fa-pencil p-0" aria-hidden="true"> </i>
-            </a>
           </div>
         </div>
       </div>
@@ -128,13 +125,40 @@
       <div *ngFor="let item of usuario.postagem | orderBy: key:reverse">
         <div class="card-body bgBlue text-white">
           <section class="testimonials">
+            <!--Aqui é o menuzinho com foto e data de postagem-->
+            <div class="row">
+              <div class="testimonials-col">
+                <img src="{{ foto }}" />
+
+                <div class="nomefeed mt-4">
+                  <h3 class="font-20">{{ nome }}</h3>
+                  <p class="card-text">
+                    <small class="text-muted"
+                      >{{ item.data | date: "dd/MM/yyyy" }} às
+                      {{ item.data | date: "HH:mm" }}</small
+                    >
+                  </p>
+                </div>
+              </div>
+              <a
+                class="navbar-nav ml-auto d-flex align-items-center p-0 mt-4"
+                data-toggle="modal"
+                data-target="#editPostagem"
+                (click)="getPostagemById(item.id)"
+                (click)="getAllTemas()"
+              >
+                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+              </a>
+            </div>
+            <!--Aqui é o menuzinho com foto e data de postagem-->
+
             <div class="font-20 text-left">{{ item.titulo }}</div>
             <div class="m-12 text-left">{{ item.texto }}</div>
-            <div class="m-12 text-left mudaFonte">
+            <div class="m-12 text-start mudaFonte">
               <button
                 (click)="getPostagemById(item.id)"
                 (click)="curtida(item.id)"
-                class="mudaFonte bgBlue btn"
+                class="bgBlue btn p-0"
               >
                 <img
                   src="https://i.imgur.com/bQ6QUon.png"
@@ -144,11 +168,11 @@
                   class="bgBlue"
                 />
               </button>
-              Bolhas: {{ item.curtidas }}
+              Furos: {{ item.curtidas }}
               <button
                 (click)="getPostagemById(item.id)"
                 (click)="descurtida(item.id)"
-                class="mudaFonte bgBlue btn"
+                class="bgBlue btn p-0"
               >
                 <img
                   src="https://i.imgur.com/sqUvqU7.png"
@@ -158,6 +182,11 @@
                   class="bgBlue"
                 />
               </button>
+              Bolhas: {{ item.descurtidas }}
+            </div>
+
+            <!--LEMBRAR DE APAGAR OS PEIXES E GATOS DO ASSETS DE ARTUR-->
+            <div>
               <button
                 type="button"
                 class="btn btn-outline-info marginbutton"
@@ -177,7 +206,6 @@
               </button>
             </div>
 
-            <!--LEMBRAR DE APAGAR OS PEIXES E GATOS DO ASSETS DE ARTUR-->
             <div>
               <img
                 src="https://media.discordapp.net/attachments/890758555806859317/898339228482678824/TIA_CELINA_6.png"
@@ -340,20 +368,21 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
-              Cancelar
-            </button>
             <button
               type="button"
               class="btn btn-outline-light bgBlue text-white"
               (click)="atualizar()"
               data-dismiss="modal"
             >
-              Publicar
+              Atualizar
+            </button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" >
+              Deletar
             </button>
           </div>
         </div>
       </div>
     </div>
+    <!--Fim do modal editar postagem-->
   </div>
 </div>

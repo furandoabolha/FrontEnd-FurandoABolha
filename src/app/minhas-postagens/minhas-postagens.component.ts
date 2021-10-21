@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../Model/Postagem';
 import { Tema } from '../Model/Tema';
@@ -17,7 +17,7 @@ export class MinhasPostagensComponent implements OnInit {
   //variaveis de postagem
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
-  idPostagem = environment.id;
+  idPostagem: number
 
   //!variaveis para o usuário
   id = environment.id;
@@ -40,7 +40,8 @@ export class MinhasPostagensComponent implements OnInit {
     private auth: AuthService,
     private postagemService: PostagemService,
     private router: Router,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit() {
@@ -48,12 +49,11 @@ export class MinhasPostagensComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
+    
 
     this.auth.refreshToken();
     this.findByIdUser(this.idUser);
     this.getAllPostagens();
-    this.curtida(this.idUser);
-    this.getPostagemById(this.idUser);
 
   }
 
@@ -147,6 +147,13 @@ export class MinhasPostagensComponent implements OnInit {
 
   apagar(id: number) {
     this.postagemService.deletePostagem(id).subscribe(() => {
+      alert('postagem deletada com sucesso');
+      this.router.navigate(['/inicio']);
+    });
+  }
+
+  deletar() {
+    this.postagemService.deletePostagem(this.idPostagem).subscribe(() => {
       alert('postagem deletada com sucesso');
       this.router.navigate(['/inicio']);
     });
