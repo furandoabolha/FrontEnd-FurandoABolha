@@ -88,9 +88,6 @@
 
           <div class="font-20 nomefeed mt-4 d-flex justify-content-center">
             <h3>{{ nome }}</h3>
-            <a [routerLink]="['/user-edit', id]">
-              <i class="fs-Edit fa fa-pencil p-0 " aria-hidden="true"></i>
-            </a>
           </div>
         </div>
       </div>
@@ -98,17 +95,18 @@
         <div class="main">
           <div class="sub-main">
             <div class="row justify-content-center">
+              <a [routerLink]="['/user-edit', id]">
+                <button class="btn btn-outline-light  mr-3">Editar Perfil</button>
+              </a>
               <button
-                class="btn btn-outline-light mr-3"
+                class="btn btn-outline-light"
                 data-toggle="modal"
                 data-target="#novaPostagem"
               >
                 Post
               </button>
 
-              <a [routerLink]="['/user-edit', id]">
-                <button class="btn btn-outline-light">Editar Perfil</button>
-              </a>
+
             </div>
           </div>
         </div>
@@ -148,7 +146,7 @@
             </div>
             <div class="font-20 text-left">{{ item.titulo }}</div>
             <div class="m-12 text-left">{{ item.texto }}</div>
-            <div class="m-12 text-center mudaFonte">
+            <div class="m-12 text-start mudaFonte">
               <button
                 (click)="getPostagemById(item.id)"
                 (click)="curtida(item.id)"
@@ -163,7 +161,8 @@
                 />
               </button>
 
-              Bolhas: {{ item.curtidas }}
+              Furos: {{ item.curtidas }}
+              
               <button
                 (click)="getPostagemById(item.id)"
                 (click)="descurtida(item.id)"
@@ -177,6 +176,7 @@
                   class="bgBlue"
                 />
               </button>
+              Bolhas: {{ item.descurtidas }}
             </div>
 
             <!--LEMBRAR DE APAGAR OS PEIXES E GATOS DO ASSETS DE ARTUR-->

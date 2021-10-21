@@ -1,6 +1,7 @@
-@import url("https://fonts.cdnfonts.com/css/bubbleboddy-neue-trial");
 * {
-  font-family: "Bubbleboddy Neue Trial";
+  font-family: myriad-pro, sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 #img-bg {
@@ -31,10 +32,7 @@ body {
   padding: 15px;
 }
 
-.form-control {
-  font-family: "Josefin Sans", sans-serif;
-  border: px solid;
-}
+
 
 .linha {
   display: flex;
@@ -47,7 +45,6 @@ body {
   padding: 0;
   margin: 0;
   outline: none;
-  font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   color: rgb(83, 80, 80);
   width: 250px;
@@ -57,6 +54,7 @@ body {
 textarea:focus,
 input:focus,
 select:focus {
+  font-weight: 200;
   box-shadow: 0 0 0 0;
   border-bottom: 1px solid #160150;
   outline: 0;
