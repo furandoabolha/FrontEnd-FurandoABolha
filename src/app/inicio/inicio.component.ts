@@ -72,6 +72,7 @@ export class InicioComponent implements OnInit {
     }
     this.auth.refreshToken();
     this.stringPesquisa = ""
+    this.listaPostagemMaisCurtidas = []
     this.getAllTemas();
     this.getAllPostagens();
     this.getAllPostagensOrdenada();

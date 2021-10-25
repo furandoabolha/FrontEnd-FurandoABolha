@@ -53,19 +53,11 @@ export class MinhasPostagensComponent implements OnInit {
     
 
     this.auth.refreshToken();
+    this.listaPostagemMaisCurtidas = []
     this.findByIdUser(this.idUser);
     this.getAllPostagens();
     this.getAllPostagensOrdenada();
 
-  }
-
-  reload() {
-    if (this.auth.reload) {
-      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/minhas-postagens']);
-        this.auth.reload = false;
-      });
-    }
   }
 
   postar() {
@@ -159,13 +151,6 @@ export class MinhasPostagensComponent implements OnInit {
 
   apagar(id: number) {
     this.postagemService.deletePostagem(id).subscribe(() => {
-      alert('postagem deletada com sucesso');
-      this.router.navigate(['/inicio']);
-    });
-  }
-
-  deletar() {
-    this.postagemService.deletePostagem(this.idPostagem).subscribe(() => {
       alert('postagem deletada com sucesso');
       this.router.navigate(['/inicio']);
     });
