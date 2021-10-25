@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../Model/Postagem';
 import { Tema } from '../Model/Tema';
 import { Usuario } from '../Model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -43,6 +44,7 @@ export class MinhasPostagensComponent implements OnInit {
     private router: Router,
     private temaService: TemaService,
     private route: ActivatedRoute,
+    private alertas: AlertasService
   ) {}
 
   ngOnInit() {
@@ -144,14 +146,13 @@ export class MinhasPostagensComponent implements OnInit {
         this.postagem = resp;
         this.router.navigate(['/inicio']);
         this.getAllPostagens();
-        alert('Postagem atualizada com sucesso!');
-        
+        this.alertas.showAlertSuccess('Postagem atualizada com sucesso!');
       });
   }
 
   apagar(id: number) {
     this.postagemService.deletePostagem(id).subscribe(() => {
-      alert('postagem deletada com sucesso');
+      this.alertas.showAlertDanger('Sua postagem foi deletada com sucesso!');
       this.router.navigate(['/inicio']);
     });
   }

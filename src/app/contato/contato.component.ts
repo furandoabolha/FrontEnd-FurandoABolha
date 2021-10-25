@@ -16,5 +16,5 @@ export class ContatoComponent implements OnInit {
   //         alert('Obrigade' + ' os seus dados foram encaminhados com sucesso');     
           
   }
-     }
+}
 

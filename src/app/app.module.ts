@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { OrderModule } from 'ngx-order-pipe';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +25,7 @@ import { TemasComponent } from './temas/temas.component';
 import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-revanche.component';
 import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
-import { OrderModule } from 'ngx-order-pipe';
+
 
 
 
@@ -58,6 +60,7 @@ import { OrderModule } from 'ngx-order-pipe';
     HttpClientModule,
     FormsModule,
     OrderModule,
+    ModalModule.forRoot(),
   ],
   providers: [{
     provide : LocationStrategy,

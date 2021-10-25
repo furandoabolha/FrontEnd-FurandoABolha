@@ -8,6 +8,7 @@ import { TemaService } from './../service/tema.service';
 import { Tema } from '../Model/Tema';
 import { Postagem } from '../Model/Postagem';
 import { PostagemService } from '../service/postagem.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -15,6 +16,7 @@ import { PostagemService } from '../service/postagem.service';
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
+  [x: string]: any;
   //*variaveis para o tema
   listaTemas: Tema[];
   idTema: number;
@@ -24,55 +26,50 @@ export class InicioComponent implements OnInit {
   nome = environment.nome;
   id = environment.id;
 
-
-
   //!variaveis para o usuário
   idUser = environment.id;
   usuario: Usuario = new Usuario();
 
   //? variaveis para a postagem
-  stringPesquisa: string
-  postagem1 = Postagem
+  stringPesquisa: string;
+  postagem1 = Postagem;
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
   idPostagem = environment.id;
-  listaPostagemMaisCurtidas: Postagem[]
+  listaPostagemMaisCurtidas: Postagem[];
 
-  tituloPost: string
+  tituloPost: string;
 
-  key = 'data'
+  key = 'data';
   reverse = true;
-
-  
 
   constructor(
     private router: Router,
     private auth: AuthService,
     private temaService: TemaService,
     private postagemService: PostagemService,
-    private route : ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService,
   ) {
     router.events.subscribe((e) => {
-
       if (e instanceof NavigationEnd) {
-        route.params.subscribe(p => {
-          this.stringPesquisa = p.nome
-        })
+        route.params.subscribe((p) => {
+          this.stringPesquisa = p.nome;
+        });
 
-        this.BuscarPostagem(this.stringPesquisa)
+        this.BuscarPostagem(this.stringPesquisa);
       }
-    })
+    });
   }
-  
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0);
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
     this.auth.refreshToken();
-    this.stringPesquisa = ""
-    this.listaPostagemMaisCurtidas = []
+    this.stringPesquisa = '';
+    this.listaPostagemMaisCurtidas = [];
     this.getAllTemas();
     this.getAllPostagens();
     this.getAllPostagensOrdenada();
@@ -89,30 +86,32 @@ export class InicioComponent implements OnInit {
       this.tema = resp;
     });
   }
-//vamo ver se vai funfar
-  getPostagemById(id: number){
-    this.postagemService.getPostagemById(id).subscribe((resp: Postagem)=>{
-      this.postagem = resp
-   })
+  //vamo ver se vai funfar
+  getPostagemById(id: number) {
+    this.postagemService.getPostagemById(id).subscribe((resp: Postagem) => {
+      this.postagem = resp;
+    });
   }
 
-  findByIdUser(){
+  findByIdUser() {
     this.auth.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
-      this.usuario = resp
-    })
+      this.usuario = resp;
+    });
   }
 
   BuscarPostagem(nome: string) {
     if (this.stringPesquisa != undefined) {
-      this.postagemService.getPostagemByTitulo(nome).subscribe((resp: Postagem[]) => {
-        this.listaPostagens = resp
-      })
+      this.postagemService
+        .getPostagemByTitulo(nome)
+        .subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp;
+        });
     } else {
       this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
-        this.listaPostagens = resp
-      })
+        this.listaPostagens = resp;
+      });
     }
-}
+  }
 
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
@@ -120,11 +119,12 @@ export class InicioComponent implements OnInit {
     });
   }
 
-
-  getAllPostagensOrdenada(){
-    this.postagemService.getAllPostagensMaisCurtidas().subscribe((resp: Postagem[]) => {
-      this.listaPostagemMaisCurtidas = resp
-    })
+  getAllPostagensOrdenada() {
+    this.postagemService
+      .getAllPostagensMaisCurtidas()
+      .subscribe((resp: Postagem[]) => {
+        this.listaPostagemMaisCurtidas = resp;
+      });
   }
 
   postar() {
@@ -138,40 +138,35 @@ export class InicioComponent implements OnInit {
       .postPostagem(this.postagem)
       .subscribe((resp: Postagem) => {
         this.postagem = resp;
-        alert('Postagem realizada com sucesso');
-        this.postagem = new Postagem();
-        this.getAllPostagens();
+        this.alertas.showAlertSuccess('Postagem realizada com sucesso!');
       });
+      this.postagem = new Postagem();
+      this.getAllPostagens();
   }
-
-
-
 
   //implementacao do putCurtir
 
-  curtida(id:number){
-    this.postagemService.putCurtir(id).subscribe(()=>{
-      this.getAllPostagens()
-    })
+  curtida(id: number) {
+    this.postagemService.putCurtir(id).subscribe(() => {
+      this.getAllPostagens();
+    });
   }
 
-  
-  descurtida(id:number){
-    this.postagemService.putDescurtir(id).subscribe(()=>{
-      this.getAllPostagens()
-    })
+  descurtida(id: number) {
+    this.postagemService.putDescurtir(id).subscribe(() => {
+      this.getAllPostagens();
+    });
   }
 
-
-  findByTituloPostagem(){
-    if(this.tituloPost == ''){
-      this.getAllPostagens()
-    }else{
-    this.postagemService.getPostagemByTitulo(this.tituloPost).subscribe((resp: Postagem[])=> {
-      this.listaPostagens = resp
-    })
+  findByTituloPostagem() {
+    if (this.tituloPost == '') {
+      this.getAllPostagens();
+    } else {
+      this.postagemService
+        .getPostagemByTitulo(this.tituloPost)
+        .subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp;
+        });
+    }
   }
 }
-
-}
-

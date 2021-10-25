@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/Model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-usuario-edit',
   templateUrl: './usuario-edit.component.html',
-  styleUrls: ['./usuario-edit.component.css']
+  styleUrls: ['./usuario-edit.component.css'],
 })
 export class UsuarioEditComponent implements OnInit {
-
   usuario: Usuario = new Usuario();
   idUsuario: number;
   tipoUsuario: string;
@@ -20,58 +20,52 @@ export class UsuarioEditComponent implements OnInit {
     private authService: AuthService,
     //isso serve para quando vai pegar um id que está na rota
     private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private router: Router,
+    private alertas: AlertasService
+  ) {}
 
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit() {
+    window.scroll(0, 0);
 
-    if(environment.token == ''){
+    if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
 
-    this.idUsuario = this.route.snapshot.params['id']
-    this.findByIdUsuario(this.idUsuario)
+    this.idUsuario = this.route.snapshot.params['id'];
+    this.findByIdUsuario(this.idUsuario);
   }
 
-  confirmSenha(event: any){
-    this.confirmarSenha = event.target.value
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value;
   }
 
-  tipoUser(event: any){
-    this.tipoUsuario = event.target.value
+  tipoUser(event: any) {
+    this.tipoUsuario = event.target.value;
   }
 
-  findByIdUsuario(id: number){
-    this.authService.getByIdUser(id).subscribe((resp: Usuario)=> {
-      this.usuario = resp
-    })
-
-
+  findByIdUsuario(id: number) {
+    this.authService.getByIdUser(id).subscribe((resp: Usuario) => {
+      this.usuario = resp;
+    });
   }
 
-  atualizar(){
-    this.usuario.tipoUsuario = this.tipoUsuario
+  atualizar() {
+    this.usuario.tipoUsuario = this.tipoUsuario;
 
-    if(this.usuario.senha != this.confirmarSenha){
+    if (this.usuario.senha != this.confirmarSenha) {
       alert('As senhas não coincidem');
     } else {
-      this.authService.putUsuario(this.usuario).subscribe((resp: Usuario)=>{
+      this.authService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
-        alert("Usuário atualizado com sucesso. Faça o login novamente")
-        environment.token = "";
-        environment.foto = "";
+        this.alertas.showAlertInfo(
+          'Usuário atualizado com sucesso. Faça o login novamente'
+        );
+        environment.token = '';
+        environment.foto = '';
         environment.id = 0;
-        environment.nome = "";
+        environment.nome = '';
         this.router.navigate(['/entrar']);
       });
     }
-
   }
-
- 
-
- 
-  
-
 }
