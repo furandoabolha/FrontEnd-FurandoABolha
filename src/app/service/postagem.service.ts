@@ -26,6 +26,10 @@ export class PostagemService {
     return this.http.get<Postagem[]>('https://furandoabolha.herokuapp.com/postagens/all', this.token)
   }
 
+  getAllPostagensMaisCurtidas(): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>('https://furandoabolha.herokuapp.com/postagens/maiscurtidas', this.token)
+  }
+
   getPostagemById(id: number): Observable<Postagem>{
     return this.http.get<Postagem>(`https://furandoabolha.herokuapp.com/postagens/${id}`, this.token)
   }

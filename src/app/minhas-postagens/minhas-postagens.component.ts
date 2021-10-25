@@ -17,6 +17,7 @@ export class MinhasPostagensComponent implements OnInit {
   //variaveis de postagem
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
+  listaPostagemMaisCurtidas: Postagem[]
   idPostagem: number
 
   //!variaveis para o usuário
@@ -100,6 +101,12 @@ export class MinhasPostagensComponent implements OnInit {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp;
     });
+  }
+
+  getAllPostagensOrdenada(){
+    this.postagemService.getAllPostagensMaisCurtidas().subscribe((resp: Postagem[]) => {
+      this.listaPostagemMaisCurtidas = resp
+    })
   }
 
   getPostagemById(id: number) {

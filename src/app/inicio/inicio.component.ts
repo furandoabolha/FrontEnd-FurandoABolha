@@ -76,6 +76,7 @@ export class InicioComponent implements OnInit {
     this.stringPesquisa = ""
     this.getAllTemas();
     this.getAllPostagens();
+    this.getAllPostagensOrdenada();
   }
 
   getAllTemas() {
@@ -118,6 +119,13 @@ export class InicioComponent implements OnInit {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp;
     });
+  }
+
+
+  getAllPostagensOrdenada(){
+    this.postagemService.getAllPostagensMaisCurtidas().subscribe((resp: Postagem[]) => {
+      this.listaPostagemMaisCurtidas = resp
+    })
   }
 
   postar() {
