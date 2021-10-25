@@ -55,6 +55,7 @@ export class MinhasPostagensComponent implements OnInit {
     this.auth.refreshToken();
     this.findByIdUser(this.idUser);
     this.getAllPostagens();
+    this.getAllPostagensOrdenada();
 
   }
 
@@ -130,11 +131,15 @@ export class MinhasPostagensComponent implements OnInit {
   curtida(id: number) {
     this.postagemService.putCurtir(id).subscribe(() => {
     });
+    this.findByIdUser(this.idUser);
+    this.getAllPostagens();
   }
 
   descurtida(id: number) {
     this.postagemService.putDescurtir(id).subscribe(() => {
     });
+    this.findByIdUser(this.idUser);
+    this.getAllPostagens();
   }
 
   atualizar() {

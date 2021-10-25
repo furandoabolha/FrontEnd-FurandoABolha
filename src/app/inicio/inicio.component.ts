@@ -41,8 +41,6 @@ export class InicioComponent implements OnInit {
   tituloPost: string
 
   key = 'data'
-
-  keyy = 'curtidas'
   reverse = true;
 
   
