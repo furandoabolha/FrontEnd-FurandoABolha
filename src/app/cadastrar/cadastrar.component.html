@@ -16,11 +16,11 @@
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input [(ngModel)]="usuario.nome" type="text" class="linha" name="nome" id="nome" >
+                        <input [(ngModel)]="usuario.nome" type="text" class="linha" name="nome" id="nome" placeholder="Digite seu nome" >
 
                         <div class="form-group">
                             <label for="usuario">Email</label>
-                            <input [(ngModel)]="usuario.email" type="text" class="linha" name="usuario" id="usuario" >
+                            <input [(ngModel)]="usuario.email" type="text" class="linha" name="usuario" id="usuario" placeholder="Digite seu email" >
                         </div>
                         <div class="form-group">
                             <label for="foto">Link da Foto</label>
@@ -36,12 +36,12 @@
 
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input (input)='confirmSenha($event)' type="password" class="linha" name="senha" id="senha" >
+                            <input (input)='confirmSenha($event)' type="password" class="linha" name="senha" id="senha" placeholder="Digite sua senha" >
                         </div>
 
                         <div class="form-group">
                             <label for="confirmSenha">Confirmar Senha</label>
-                            <input [(ngModel)]="usuario.senha" type="password" class="linha" name="confirmSenha" id="confirmSenha" >
+                            <input [(ngModel)]="usuario.senha" type="password" class="linha" name="confirmSenha" id="confirmSenha" placeholder="Confirme a senha" >
                         </div>
 
                         <div class="form-group">

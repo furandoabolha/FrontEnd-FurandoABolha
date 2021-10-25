@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../Model/Postagem';
 import { Tema } from '../Model/Tema';
 import { Usuario } from '../Model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -17,6 +18,7 @@ export class MinhasPostagensComponent implements OnInit {
   //variaveis de postagem
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
+  listaPostagemMaisCurtidas: Postagem[]
   idPostagem: number
 
   //!variaveis para o usuário
@@ -42,6 +44,7 @@ export class MinhasPostagensComponent implements OnInit {
     private router: Router,
     private temaService: TemaService,
     private route: ActivatedRoute,
+    private alertas: AlertasService
   ) {}
 
   ngOnInit() {
@@ -52,18 +55,11 @@ export class MinhasPostagensComponent implements OnInit {
     
 
     this.auth.refreshToken();
+    this.listaPostagemMaisCurtidas = []
     this.findByIdUser(this.idUser);
     this.getAllPostagens();
+    this.getAllPostagensOrdenada();
 
-  }
-
-  reload() {
-    if (this.auth.reload) {
-      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/minhas-postagens']);
-        this.auth.reload = false;
-      });
-    }
   }
 
   postar() {
@@ -102,6 +98,12 @@ export class MinhasPostagensComponent implements OnInit {
 
     
     });
+  }
+
+  getAllPostagensOrdenada(){
+    this.postagemService.getAllPostagensMaisCurtidas().subscribe((resp: Postagem[]) => {
+      this.listaPostagemMaisCurtidas = resp
+    })
   }
 
   getPostagemById(id: number) {
@@ -146,21 +148,13 @@ export class MinhasPostagensComponent implements OnInit {
         this.postagem = resp;
         this.router.navigate(['/inicio']);
         this.getAllPostagens();
-        alert('Postagem atualizada com sucesso!');
-        
+        this.alertas.showAlertSuccess('Postagem atualizada com sucesso!');
       });
   }
 
   apagar(id: number) {
     this.postagemService.deletePostagem(id).subscribe(() => {
-      alert('postagem deletada com sucesso');
-      this.router.navigate(['/inicio']);
-    });
-  }
-
-  deletar() {
-    this.postagemService.deletePostagem(this.idPostagem).subscribe(() => {
-      alert('postagem deletada com sucesso');
+      this.alertas.showAlertDanger('Sua postagem foi deletada com sucesso!');
       this.router.navigate(['/inicio']);
     });
   }

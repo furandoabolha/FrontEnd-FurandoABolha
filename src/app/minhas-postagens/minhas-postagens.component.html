@@ -1,49 +1,48 @@
-<!-- Começo do canto direito do feed -->
 <div class="container-fluid bgBlue">
+  <!-- Começo do canto direito do feed -->
   <div
     id="div1"
     class="col-md-3 col-sm-12 sticky-top text-white margintoptitulo"
   >
-    <div class="justify-content-center text-center">
-      <div><h3>O MAIS FURADOS</h3></div>
-      <div class="marginsub70"><h5>Trummer</h5></div>
-      <div class="marginsub70 text-left">
-        <p>
-          Os peixes são animais vertebrados, aquáticos, tipicamente
-          ectotérmicos, que possuem o corpo fusiforme, os membros transformados
-          em barbatanas ou nadadeiras ...
-        </p>
-      </div>
+  <div class="scroll">
+    <div class="d-flex justify-content-center">
+      <h3>OS MAIS FURADOS</h3>
     </div>
+    <div
+      class="justify-content-center text-center"
+      *ngFor="let item of listaPostagemMaisCurtidas.slice(-2)"
+    >
+      <div class="testimonials-col">
+        <img src="{{ item.usuario.foto }}" />
 
-    <div class="justify-content-center text-center">
-      <div class="marginsub70"><h5>Modesto</h5></div>
-      <div class="marginsub70 text-left">
-        <p>
-          Os peixes são animais vertebrados, aquáticos, tipicamente
-          ectotérmicos, que possuem o corpo fusiforme, os membros transformados
-          em barbatanas ou nadadeiras ...
-        </p>
+        <div class="nomefeed mt-4">
+          <h3 class="font-20">{{ item.usuario.nome }}</h3>
+          <p class="card-text">
+            <small class="text-muted"
+              >{{ item.data | date: "dd/MM/yyyy" }} às
+              {{ item.data | date: "HH:mm" }}</small
+            >
+          </p>
+        </div>
       </div>
+      <div class="text-left">{{ item.titulo }}</div>
+      <div class="m-12 text-left">{{ item.texto }}</div>
     </div>
-
+  </div>
+    <!--Rodape COMECA AQUI -->
     <div>
       <div class="container">
         <div class="row">
           <div class="col-md-12 d-flex justify-content-center">
             <ul class="social-network m-0">
               <li>
-                <a
-                  href="https://mail.google.com/mail/u/0/#inbox?compose=new"
-                  target="_blank"
-                  class="icoGitHub"
-                >
+                <a href="" class="text-muted" [routerLink]="['/contato']">
                   <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 </a>
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/feed/"
+                  href="https://www.linkedin.com/in/furando-a-bolha-5b2442222/"
                   target="_blank"
                   class="icoLinkedin"
                 >
@@ -52,7 +51,7 @@
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/generationbrasil/"
+                  href="https://www.instagram.com/furandoabolha21/"
                   target="_blank"
                   class="icoInstagram"
                 >
@@ -67,11 +66,12 @@
         </div>
         <div class="footer-copyright text-center">
           <a [routerLink]="['/sobre-nos']" href="">
-            <p class="text-light">Sobre nós</p>
+            <span class="text-light">Sobre nós</span>
           </a>
         </div>
       </div>
     </div>
+    <!--Rodape ACABA AQUI -->
   </div>
   <!-- Final do canto direito do feed -->
 
@@ -91,18 +91,17 @@
         <div class="main">
           <div class="sub-main">
             <div class="row justify-content-center">
+              <a [routerLink]="['/user-edit', id]">
+                <button class="btn btn-outline-light">Editar Perfil</button>
+              </a>
               <button
-                class="btn btn-outline-light mr-3"
+                class="btn btn-outline-light ml-3"
                 data-toggle="modal"
                 data-target="#novaPostagem"
                 (click)="getAllTemas()"
               >
                 Post
               </button>
-
-              <a [routerLink]="['/user-edit', id]">
-                <button class="btn btn-outline-light">Editar Perfil</button>
-              </a>
             </div>
           </div>
         </div>
@@ -184,8 +183,6 @@
               </button>
               Bolhas: {{ item.descurtidas }}
             </div>
-
-            
 
             <div>
               <img
