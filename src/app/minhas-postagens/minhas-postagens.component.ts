@@ -99,6 +99,8 @@ export class MinhasPostagensComponent implements OnInit {
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp;
+
+    
     });
   }
 
@@ -123,11 +125,15 @@ export class MinhasPostagensComponent implements OnInit {
   curtida(id: number) {
     this.postagemService.putCurtir(id).subscribe(() => {
     });
+    this.findByIdUser(this.idUser);
+    this.getAllPostagens();
   }
 
   descurtida(id: number) {
     this.postagemService.putDescurtir(id).subscribe(() => {
     });
+    this.findByIdUser(this.idUser);
+    this.getAllPostagens();
   }
 
   atualizar() {

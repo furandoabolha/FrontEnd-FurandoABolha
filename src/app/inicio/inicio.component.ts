@@ -8,6 +8,17 @@ import { TemaService } from './../service/tema.service';
 import { Tema } from '../Model/Tema';
 import { Postagem } from '../Model/Postagem';
 import { PostagemService } from '../service/postagem.service';
+import { ArrayType } from '@angular/compiler';
+
+
+const HEROES = [
+  {id: 1, name:'Superman'},
+  {id: 2, name:'Batman'},
+  {id: 5, name:'BatGirl'},
+  {id: 3, name:'Robin'},
+  {id: 4, name:'Flash'}
+];
+
 
 @Component({
   selector: 'app-inicio',
@@ -24,7 +35,9 @@ export class InicioComponent implements OnInit {
   nome = environment.nome;
   id = environment.id;
 
+  duasCurtidas: any;
 
+  heroes = HEROES;
 
   //!variaveis para o usuário
   idUser = environment.id;
@@ -45,7 +58,8 @@ export class InicioComponent implements OnInit {
   keyy = 'curtidas'
   reverse = true;
 
-  
+ 
+ 
 
   constructor(
     private router: Router,
@@ -65,7 +79,7 @@ export class InicioComponent implements OnInit {
       }
     })
   }
-  
+   
 
   ngOnInit() {
     window.scroll(0,0)
@@ -76,6 +90,11 @@ export class InicioComponent implements OnInit {
     this.stringPesquisa = ""
     this.getAllTemas();
     this.getAllPostagens();
+  
+    this.getDuasPostagens();
+
+
+   
   }
 
   getAllTemas() {
@@ -103,10 +122,17 @@ export class InicioComponent implements OnInit {
   }
 
   BuscarPostagem(nome: string) {
-    if (this.stringPesquisa != undefined) {
+    if (this.stringPesquisa != undefined ) {
       this.postagemService.getPostagemByTitulo(nome).subscribe((resp: Postagem[]) => {
         this.listaPostagens = resp
       })
+
+      if(this.stringPesquisa == "tudo" || this.stringPesquisa == '' ){
+        this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp
+        })
+      }
+     
     } else {
       this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
         this.listaPostagens = resp
@@ -114,11 +140,31 @@ export class InicioComponent implements OnInit {
     }
 }
 
+ maiorescurtidas: any;
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp;
-    });
+      
+      this.listaPostagens.forEach(item => {
+      if(item.curtidas > 25)
+       this.maiorescurtidas = item;
+    
+      
+});
+ });
   }
+  
+getDuasPostagens(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
+      resp.forEach(item => {
+        if(item.curtidas > 23)
+            this.duasCurtidas = item;
+            console.log(this.duasCurtidas);
+      })
+
+    })
+}
+
 
   postar() {
     this.tema.id = this.idTema;
@@ -166,5 +212,46 @@ export class InicioComponent implements OnInit {
   }
 }
 
+
 }
+
+class TestStatus {
+
+
+
+  id: number
+  name: string
+
+  lista :Postagem[]
+
+  
+  
+  constructor(id: number, name: string){
+      this.id = id;
+      this.name = name;
+  }
+}
+
+type Statuses = Array<TestStatus>;
+
+var statuses: Statuses = [
+  new TestStatus(0, "Available"),
+  new TestStatus(1, "Ready"),
+  new TestStatus(2, "Started")
+]
+
+
+
+function name20(nus: Array<Postagem>): Array<Postagem> {
+  let everNums = [];
+
+
+  for(let num of nus){
+    if(num.id % 2 == 0){
+        everNums.push(num);
+    }
+  }
+  return everNums;
+}
+
 
