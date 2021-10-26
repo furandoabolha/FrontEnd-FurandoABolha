@@ -95,6 +95,8 @@ export class MinhasPostagensComponent implements OnInit {
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp;
+
+    
     });
   }
 

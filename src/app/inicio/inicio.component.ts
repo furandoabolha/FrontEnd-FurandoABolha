@@ -113,11 +113,31 @@ export class InicioComponent implements OnInit {
     }
   }
 
+ maiorescurtidas: any;
   getAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp;
-    });
+      
+      this.listaPostagens.forEach(item => {
+      if(item.curtidas > 25)
+       this.maiorescurtidas = item;
+    
+      
+});
+ });
   }
+  
+getDuasPostagens(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
+      resp.forEach(item => {
+        if(item.curtidas > 23)
+            this.duasCurtidas = item;
+            console.log(this.duasCurtidas);
+      })
+
+    })
+}
+
 
   getAllPostagensOrdenada() {
     this.postagemService
