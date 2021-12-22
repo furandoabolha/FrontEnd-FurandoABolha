@@ -11,6 +11,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-revanche.component';
+import { VisualizacaoComponent } from './visualizacao/visualizacao.component';
 
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
@@ -28,6 +29,8 @@ const routes: Routes = [
   {path: 'tema', component:TemaComponent},
   {path: 'contato', component:ContatoComponent},
   {path:'ninguemliga', component:SobreNosComponent},
+
+  {path: 'visualizacao', component:VisualizacaoComponent},
 
   {path: 'sobre-nos', component:SobreNosARevancheComponent},
   {path: 'temas', component:TemasComponent},

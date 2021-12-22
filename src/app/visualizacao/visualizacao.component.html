@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  
+
+<div class="container">
+  <header class="item header"><h1>FURANDO A BOLHA</h1></header>
+  <div class="scroll">
+
+    <div class="d-flex justify-content-center">
+      <h1>Principais Postagem</h1>
+    </div>
+    <!--<tr *ngFor="let hero of heroes; let i = index;" > -->
+     
+    <div
+      class="justify-content-center text-center"
+      *ngFor="let item of listaPostagemMaisCurtidas.slice(-6)"
+    >
+      <div class="testimonials-col">
+        <img src="{{ item.usuario.foto }}" />
+       
+        <div class="nomefeed mt-4">
+          <h3 class="font-20">{{ item.usuario.nome  }}</h3>
+          <p class="card-text">
+            <small class="text-muted"
+              >{{ item.data | date: "dd/MM/yyyy" }} às
+              {{ item.data | date: "HH:mm" }}</small
+            >
+          </p>
+        </div>
+      </div>
+      <div class="text-left nomefeed">{{ item.titulo }}</div>
+      <div class="m-12 text-left nomefeed">{{ item.texto }}</div>
+    </div>
+   
+   </div>
+
+      <div class="item chá ">
+        <h1 class="justify-content-center">Entre ou cadastre-se no Furando a Bolha para conectar-se</h1>
+          <div class="organbotao">
+            <button type="button" class="btn btn-outline-light botao">Logar</button>
+            <button type="button" class="btn btn-outline-light botao">cadastre-se</button>
+          </div>
+      </div>
+  
+</div>
+</body>
+</html>

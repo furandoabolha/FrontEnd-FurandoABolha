@@ -25,6 +25,7 @@ import { TemasComponent } from './temas/temas.component';
 import { SobreNosARevancheComponent } from './sobre-nos-a-revanche/sobre-nos-a-revanche.component';
 import { MinhasPostagensComponent } from './minhas-postagens/minhas-postagens.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { VisualizacaoComponent } from './visualizacao/visualizacao.component';
 
 
 
@@ -50,6 +51,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     SobreNosARevancheComponent,
     MinhasPostagensComponent,
     UsuarioEditComponent,
+    VisualizacaoComponent,
 
 
   
