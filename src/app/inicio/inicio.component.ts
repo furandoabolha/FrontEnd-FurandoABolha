@@ -60,6 +60,10 @@ export class InicioComponent implements OnInit {
         this.BuscarPostagem(this.stringPesquisa);
       }
     });
+
+
+
+
   }
 
   ngOnInit() {
@@ -189,4 +193,8 @@ getDuasPostagens(){
         });
     }
   }
+
+
+
+
 }

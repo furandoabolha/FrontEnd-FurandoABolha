@@ -108,6 +108,8 @@ ul.social-network li{
 
 .nomefeed{
     color:  white;
+    
+    
 }
 
 /*Grid*/
@@ -168,7 +170,6 @@ ul.social-network li{
     grid-area: chá;
     display: flex;
     flex-direction: column;
-    
 }
 
 .botao{
@@ -180,6 +181,7 @@ ul.social-network li{
 .organbotao{
     display: flex;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 body {
@@ -192,7 +194,7 @@ body {
 .item {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     color: #ffffff;
-    border-radius: 4px;
+    border-radius: 10%;
     border: 6px solid #171717;
     display: flex;
 }
@@ -207,6 +209,7 @@ h1{
     .container {
         display: grid;
         width: 100%;
+        padding: 0;
         height: 600px;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
