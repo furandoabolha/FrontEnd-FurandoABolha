@@ -192,3 +192,37 @@ ul.social-network li{
 .marginbutton{
     margin-right: 20px;
 }
+
+@media (max-width: 870px) {
+    #div1{
+      position: static;
+      width: 100%;
+      height: 100%;
+    }
+    #div3{
+     
+      width: 100%;
+      height: 400px;
+      position: relative;
+      border-radius: 20px;
+      border-color: black;
+    }
+  
+    #div2{
+      margin-top: 50px;
+    }
+  
+    section.testimonials.ml-{
+        height: 1px;
+    }
+  
+    #div3 .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      margin-top: 32px;
+  }
+    
+  
+  }
